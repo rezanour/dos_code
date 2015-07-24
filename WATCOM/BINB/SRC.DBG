@@ -1,0 +1,18 @@
+* Syntax:	src
+*
+* Synopsis:	Creates a source window that uses most of the screen.
+*		A small assembly window is also created and placed under
+*		the dialogue window.  The register and stack windows are
+*		removed from the screen.
+*
+/_dbg@dbg$asm_top = _dbg@dbg$bot+1
+/_dbg@dbg$asm_bot = _dbg@dbg$bottom-1
+/_dbg@dbg$src_top = _dbg@dbg$top
+/_dbg@dbg$src_bot = _dbg@dbg$bot
+/_dbg@dbg$wind_split = 0
+display register /close
+display stack /close
+display assembly {Assembly: *} _dbg@dbg$asm_top, _dbg@dbg$asm_bot, _dbg@dbg$left, _dbg@dbg$right
+display source	 {Source:   *} _dbg@dbg$src_top, _dbg@dbg$src_bot, _dbg@dbg$left, _dbg@dbg$right
+display dialogue {Dialogue: *} _dbg@dbg$bot+1, _dbg@dbg$bottom-1, _dbg@dbg$left, _dbg@dbg$right
+set level source

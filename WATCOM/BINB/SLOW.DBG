@@ -1,0 +1,11 @@
+* Syntax:	slow <delay>
+*
+* Synopsis:	Perform slow motion execution of a program.
+*
+* Example:	slow 2
+*
+while 1 {
+    if *((char *)_dbg@dbg$ip) == 0xcd {t/o} {t/i};
+    d;
+    /_dbg@x=0;while _dbg@x<<1> {/_dbg@x=_dbg@x+1}
+}

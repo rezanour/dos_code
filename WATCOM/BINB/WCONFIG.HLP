@@ -1,0 +1,1408 @@
+::::HelpAbout
+                                About
+                                อออออ
+ 
+Selection of this menu item will display the version number of the
+program, a brief description of it, and the licensee if the program
+has been licensed in an annual manner.
+::::HelpCfgExit
+                                 Exit
+                                 ออออ
+ 
+Selection of this menu item will terminate the WCONFIG program. If you
+have changed the snow-checking method, the current printer, or a
+screen attribute you will be prompted as to whether these changes are
+to be saved in the configuration information.
+::::HelpCfgPgm
+                        Configuration program
+                        อออออออออออออออออออออ
+ 
+The configuration program is used to inform workbench software about
+the hardware attached to your computer or computer network. As well,
+it is used to set the attributes (colour or emphasis) used to display
+on the computer monitor(s). This is known as configuration. Workbench
+software uses the configuration information when appropriate during
+its operation.
+ 
+More specifically, you can specify:
+   (1) The printers attached to your system
+   (2) The screen attributes to be used
+   (3) The method used for snow checking
+   (4) The operation of the file browser
+ 
+The "Control" menu contains the usual InfoBench items to obtain Help,
+to invoke the DOS command interpreter, to display "About" information,
+and to Exit the program.
+ 
+The "Printer" menu contains items to configure the system to have no
+printers, to indicate which printer is to be used by default, and to
+configure individual printers. Up to nine printers can be configured.
+It is possible to configure the same physical printer in several ways.
+ 
+The "Screen-1", "Screen-2", and "Word-Processing" menus are used to
+select a specific screen attribute to be set. For each item,
+attributes can be set for colour, black-and-white, and monochrome
+modes.
+ 
+The "Miscellaneous" menu contains items by which the snow-checking
+method can be set and by which file browsing can be configured.
+ 
+Complete documentation about this utility program is found in the
+Support Utilities manual distributed with the InfoBench system.
+::::HelpCfgPrtChar
+                             Printer [n]
+                             อออออออออออ
+ 
+Select this item if you wish to configure the n-th printer. You can
+choose the printer type and the printer name. You can set certain
+hardware-independent attributes of the printer such as the number of
+lines per page and whether the InfoBench software should pause at
+start of each page so that you can feed individual sheets of paper.
+ 
+If you have a printer of a type for which there is not pre-defined
+support, you can specify the binary sequences which are to be
+transmitted to the printer to accomplish differing emphasis modes.
+::::HelpCfgSnow
+                         Snow-checking method
+                         ออออออออออออออออออออ
+ 
+For a description of what is snow checking, see <SnowCheck>.
+ 
+If you select this menu option, you will presented with three choices
+from which you can select the method to be used.
+::::HelpCfgUpdate
+                         Update configuration
+                         ออออออออออออออออออออ
+ 
+You are being asked to confirm whether the general configuration
+information should be updated. Press the ENTER key if you wish it to
+be saved; press the Esc (escape) key if you do wish to have it saved.
+::::HelpFbAttribute
+                              Attribute
+                              อออออออออ
+ 
+When this check field is set (an asterisk (*) appears between the
+square parentheses), the DOS attributes for a file are listed beside
+the file name in the browsing window. Otherwise, no attributes are
+displayed.
+ 
+The following characters can be displayed to indicate attributes:
+       A -- the file has not been archived
+       R -- the file is read-only; it cannot be changed
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbDate
+                                 Date
+                                 ออออ
+ 
+When this check field is set (an asterisk (*) appears between the
+square parentheses), the date on which a file was created is listed
+beside the file name in the browsing window. Otherwise, the date is
+not displayed.
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbDescription
+                             Description
+                             อออออออออออ
+ 
+When this check field is set (an asterisk (*) appears between the
+square parentheses), a description of the file (based upon the file
+extension after the period (.) in the file name) is listed beside the
+file name. When the file extension is not recognized by the
+application, a blank description is displayed. No descriptions are
+shown when the check field is not set.
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbDirBrowse
+                          Directory Browser
+                          อออออออออออออออออ
+ 
+When this radio button is set (an asterisk appears between the
+parentheses), a hotspot
+       F2=Dir.-Browser
+will be displayed near the bottom of the file-browsing window. While
+file browsing, if F2 is pressed, the Directory Browser will be
+activated to enable you to change the current directory being browsed.
+ 
+See also: <RADIO_BUTTON> <DIRECTORY_BROWSE>
+ 
+::::HelpFbDirDialogue
+                          Directory Dialogue
+                          ออออออออออออออออออ
+ 
+When this radio button is set (an asterisk appears between the
+parentheses), a hotspot
+       F2=Set-Directory
+will be displayed near the bottom of the file-browsing window. While
+file browsing, if F2 is pressed, a dialogue window will be displayed
+in which you can change the drive and directory from which files are
+browsed.
+ 
+See also: <RADIO_BUTTON>
+ 
+::::HelpFbDisable
+                        Disable File Browsing
+                        อออออออออออออออออออออ
+ 
+When this radio button is set (an asterisk appears between the
+parentheses), a window is presented into which a file name is typed.
+Otherwise, file browsing will be enabled.
+ 
+See also: <RADIO_BUTTON>
+ 
+::::HelpFbEnable
+                         Enable File Browsing
+                         ออออออออออออออออออออ
+ 
+When this radio button is set (an asterisk appears between the
+parentheses), file browsing will be enabled. Otherwise, a window is
+presented into which a file name is typed.
+ 
+See also: <RADIO_BUTTON>
+ 
+::::HelpFbLastDir
+                    Remember last browse directory
+                    ออออออออออออออออออออออออออออออ
+ 
+When this check field is set (an "X" appears between the square
+parentheses), each application will remember the last directory that
+was browsed. That directory becomes the initial browsing directory
+when the file browser is next activated during a session.
+ 
+When the check field is not set, the initial browsing directory will
+always be your current directory.
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbPathBrowse
+                             Path Browser
+                             ออออออออออออ
+ 
+When this radio button is set (an asterisk appears between the
+parentheses), a hotspot
+       F2=Path-Browser
+will be displayed near the bottom of the file-browsing window. While
+file browsing, if F2 is pressed, the Path Browser will be activated to
+enable you to change the current directory being browsed.
+ 
+See also: <RADIO_BUTTON> <PATH_BROWSE>
+ 
+::::HelpFbSize
+                                 Size
+                                 ออออ
+ 
+When this check field is set (an asterisk (*) appears between the
+square parentheses), the size of a file is listed beside the file name
+in the browsing window. Otherwise, the size is not displayed.
+ 
+The file size is in bytes (characters) and represents the size
+occupied by the data in the file. The file may occupy more space on
+your disk or diskette, since file space is allocated in
+device-dependent increments (such as 512 bytes).
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbSubDir
+               Include sub-directories in browse window
+               ออออออออออออออออออออออออออออออออออออออออ
+ 
+When this check field is set (an "X" appears between the square
+parentheses), any sub-directories of the directory which is being
+browsed will be listed as
+       * sub-directory: name
+where "name" is the name of the sub-directory. You can change the
+browse directory to a particular sub-directory by making the line
+containing the sub-directory the current line and pressing the ENTER
+key. If there is a mouse attached to your computer, you can change the
+browse directory to become the sub-directory by clicking the mouse on
+the line containing the sub-directory in question.
+ 
+When the current browse directory contains a parent directory, this
+will be noted by an item
+       * parent directory
+at the start of the browse list. You can position to this directory in
+the same way as you would position to a sub-directory.
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFbTime
+                                 Time
+                                 ออออ
+ 
+When this check field is set (an asterisk (*) appears between the
+square parentheses), the time at which a file was created is listed
+beside the file name in the browsing window. Otherwise, the time is
+not displayed.
+ 
+See also: <CHECK_FIELD>
+ 
+::::HelpFileBrowseDial
+                      File Browser Configuration
+                      ออออออออออออออออออออออออออ
+ 
+Selection of this menu item will display a dialogue window containing
+options which will control how the file browser operates.
+Specifically, the window contains options to control:
+       * whether file-browsing is enabled
+       * whether sub-directories are listed in the browse area
+       * how new directories can be set
+       * whether the system remembers the last directory browsed
+Help is available for each of the options in the window.
+::::HelpFontBeg
+                      Start of Printer Commands
+                      อออออออออออออออออออออออออ
+ 
+The current position is before the printer commands used to emphasize
+phrases. Press the CURSOR-DOWN key to move to the first command.
+::::HelpFontCmd
+                Printer command to emphasize a phrase
+                อออออออออออออออออออออออออออออออออออออ
+ 
+This command is sent to the printer when workbench software prints a
+phrase with the associated emphasis.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpFontEnd
+                       End of Printer Commands
+                       อออออออออออออออออออออออ
+ 
+The current position is after the printer commands used to emphasize
+phrases. Press the CURSOR-UP key to move to the last command.
+::::HelpFontName
+      Name associated with printer command to emphasize phrases
+      อออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+This name is the one that you (or a user) will see when you print a
+phrase with this emphasis. The workbench uses the following names, if
+possible: bold - bold text (darker than normal) underline - underlined
+text bold,underline - bold and underlined text compress - compressed
+text
+::::HelpHotItem
+                      Hot letter in a menu item
+                      อออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the hot letter
+(see <HOT_LETTER>) in a menu item when the menu is pulled down and
+that item can be selected.
+ 
+See also: <MENUS>
+ 
+::::HelpHotMenu
+         Hot letter in a menu bar item, when menus activated
+         อออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the hot letter
+(see <HOT_LETTER>) in a menu bar item when the menus have been
+activated (by pressing and releasing the ALT key or with the mouse).
+ 
+See also: <MENUS>
+ 
+::::HelpHotQuiet
+       Hot letter in a menu bar item, when menus not activated
+       อออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the hot letter
+(see <HOT_LETTER>) in a menu bar item when the menu is can be
+activated but is currently not activated.
+ 
+See also: <MENUS>
+ 
+::::HelpMenuControl
+                             Control Menu
+                             ออออออออออออ
+ 
+This menu contains the items:
+   * Help: obtain help about WCONFIG,
+   * DOS Services: suspend WCONFIG to allow DOS commands to be
+     entered
+   * About: obtain the about information for WCONFIG
+   * Exit: exit WCONFIG
+ 
+See also: <MENUS>
+ 
+::::HelpMenuMisc
+                          Miscellaneous menu
+                          ออออออออออออออออออ
+ 
+This menu is used to set the method to detect whether snow checking is
+required and to configure the file browser.
+ 
+You can obtain help text for any menu item by positioning to that item
+and the pressing the F1 key.
+ 
+See also: <MENUS>
+ 
+::::HelpMenuPrinter
+                             Printer Menu
+                             ออออออออออออ
+ 
+This menu can be used to:
+   * configure the workbench to have no printers
+   * select which printer is the default printer
+   * configure a printer
+ 
+You can obtain help text for any menu item by positioning to that item
+and the pressing the F1 key.
+ 
+See also: <MENUS>
+ 
+::::HelpMenuScreen1
+                   Configure Screen Attributes (1)
+                   อออออออออออออออออออออออออออออออ
+ 
+This menu can be used to set the screen attributes for:
+   * menus
+   * text, in general
+ 
+You can obtain help text for any menu item by positioning to that item
+and the pressing the F1 key.
+ 
+See also: <MENUS>
+ 
+::::HelpMenuScreen2
+                   Configure Screen Attributes (2)
+                   อออออออออออออออออออออออออออออออ
+ 
+This menu can be used to set the screen attributes for:
+   * forms
+   * dialogues
+   * hot spots
+ 
+You can obtain help text for any menu item by positioning to that item
+and the pressing the F1 key.
+ 
+See also: <MENUS>
+ 
+::::HelpMenuWp
+                      Word Processing Attributes
+                      ออออออออออออออออออออออออออ
+ 
+This menu can be used to set the screen attributes for text that is
+emphasized in word-processing tools.
+ 
+You can obtain help text for any menu item by positioning to that item
+and the pressing the F1 key.
+ 
+See also: <MENUS>
+ 
+::::HelpMonActive
+                Active item in menu, when not current
+                อออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for active items
+(items that can be selected) in menus, other than the current item.
+These items should appear differently from the inactive items (which
+cannot be selected at that time) so that you can see which menu
+functions are able to be selected.
+::::HelpMonActiveCurr
+                 Active item in menu, item is current
+                 ออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the current
+item in a menu, when that item is active (able to selected). This item
+should appear differently from the other menu items.
+::::HelpMonAttrVal
+                           Attribute value
+                           อออออออออออออออ
+ 
+You can enter, as a decimal number, the attribute value for the screen
+attribute being configured. The value of the current attribute is
+displayed in this field.
+For details about how to configure an attribute see <SET_ATTRIBUTE>.
+ 
+::::HelpMonBackground
+                      Background colour or shade
+                      ออออออออออออออออออออออออออ
+ 
+Your current position is within a group of radio buttons which
+represent the choices for the background colour or shade. Set the
+radio button for the background that you desire.
+ 
+Characters are displayed "on top" of the background using the
+foreground colour. Make sure that there is good contrast between the
+foreground and background colours.
+For details about how to configure an attribute see <SET_ATTRIBUTE>.
+ 
+::::HelpMonDialogue
+                            Dialogue lines
+                            ออออออออออออออ
+ 
+Select this item to configure the screen attribute for lines drawn in
+dialogue windows. A dialogue window is a window which pops up on the
+screen for immediate interaction or cancellation.
+::::HelpMonEdit
+                       Field, when not current
+                       อออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for a field in a
+window.
+::::HelpMonEditCurr
+                            Current field
+                            อออออออออออออ
+ 
+Select this item to configure the screen attribute for the current
+field in a window.
+::::HelpMonError
+                        Text of error messages
+                        ออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the text of
+error messages.
+::::HelpMonForeground
+                      Foreground colour or shade
+                      ออออออออออออออออออออออออออ
+ 
+Your current position is within a group of radio buttons which
+represent the choices for the foreground colour or shade. Set the
+radio button for the foreground that you desire.
+ 
+Characters are displayed "on top" of the background using the
+foreground colour. Make sure that there is good contrast between the
+foreground and background colours.
+For details about how to configure an attribute see <SET_ATTRIBUTE>.
+ 
+::::HelpMonFrame
+                            Lines on forms
+                            ออออออออออออออ
+ 
+Select this item to configure the screen attribute for lines on
+windows (other than dialogue windows).
+::::HelpMonFrameDial
+                            Lines on forms
+                            ออออออออออออออ
+ 
+Select this item to configure the screen attribute for lines on
+dialogue windows.
+::::HelpMonHelp
+                              Help text
+                              อออออออออ
+ 
+Select this item to configure the screen attribute for HELP text.
+::::HelpMonHilight
+                            Highlight Text
+                            ออออออออออออออ
+ 
+Select this item to configure the screen attribute for highlighted
+text. This is like normal text, except that it is displayed with
+special emphasis.
+::::HelpMonHint
+               Text of hint message at bottom of screen
+               ออออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the text of
+hint messages at the bottom of the screen.
+::::HelpMonHotspot
+                            Active hotspot
+                            ออออออออออออออ
+ 
+Select this item to configure the screen attribute for a hotspot which
+is active (can be selected).
+::::HelpMonHotspotCurr
+                          Activated hotspot
+                          อออออออออออออออออ
+ 
+Select this item to configure the screen attribute for a hotspot which
+is active (can be selected) and for which the leftmost mouse button
+has been pressed (and not yet released) while the mouse cursor was
+within that hotspot.
+::::HelpMonHotspotOff
+                           Inactive hotspot
+                           ออออออออออออออออ
+ 
+Select this item to configure the screen attribute for a hotspot which
+is presently inactive (cannot be selected).
+::::HelpMonInact
+               Inactive item in menu, when not current
+               อออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for inactive menu
+items (items which cannot be selected at present), other than the
+current item. These items should appear differently from the active
+items (which can be selected at that time) so that you can see which
+menu functions are able to be selected.
+::::HelpMonInactCurr
+                Inactive item in menu, item is current
+                ออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the current
+item in a menu, when that item is also inactive (cannot be selected at
+present).
+::::HelpMonMarked
+                             Marked text
+                             อออออออออออ
+ 
+Select this item to configure the screen attribute for text that has
+been marked. Marked text is used in the Editor as a range which can be
+deleted or for which changes are to be restricted.
+::::HelpMonMarkEdit
+                     Current field in marked area
+                     ออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the current
+field in a marked area. Some InfoBench software packages will mark an
+area of text.
+::::HelpMonMarkNorm
+                    Normal text, in a marked area
+                    อออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for normal text in
+a marked area. Some InfoBench software packages will mark an area of
+text. This attribute is used where the normal attribute would be used
+if the area were not marked.
+::::HelpMonMenu
+                              Menu lines
+                              ออออออออออ
+ 
+Select this item to configure the screen attribute for menu lines.
+Menu lines include the line under the menu bar, the lines drawn around
+menus that are pulled down, and the dividing lines within menus.
+::::HelpMonNormal
+                             Normal Text
+                             อออออออออออ
+ 
+Select this item to configure the screen attribute for normal text
+(except in dialogue windows). This is text which has no special
+emphasis and is not part of a field. The background colour will be the
+background of a normal window.
+::::HelpMonNormalDial
+                   Normal Text, in dialogue window
+                   อออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for normal text in
+dialogue windows. This is text which has no special emphasis and is
+not part of a field. The background colour will be the background of a
+normal window.
+::::HelpMonReverse
+                             Reverse Text
+                             ออออออออออออ
+ 
+Select this item to configure the screen attribute for reverse text.
+This is like normal text, except that it is displayed with special
+emphasis, usually a reversal of the foreground and background.
+::::HelpMonScrollBar
+                              Scroll bar
+                              ออออออออออ
+ 
+Select this item to configure the screen attribute for scroll bars.
+::::HelpMonScrollIcon
+                             Scroll icons
+                             ออออออออออออ
+ 
+Select this item to configure the screen attribute for scrolling icons
+(arrows and triangles) on scroll bars.
+::::HelpMonWarn
+                       Text of warning messages
+                       ออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the text of
+warning messages.
+::::HelpMonWpBold
+                  Bold, in word processing software
+                  อออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for text that
+represents bold emphasis in word-processing software.
+::::HelpMonWpBUnder
+           Bold and Underlined, in word processing software
+           ออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for bold text that
+is underlined by word-processing software.
+::::HelpMonWpCursor
+                 Cursor, in word processing software
+                 อออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for the logical
+cursor (character, word, sentence, or paragraph) used by
+word-processing software.
+::::HelpMonWpUnder
+               Underlined, in word processing software
+               อออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for text that is
+underlined by word-processing software.
+::::HelpNoMemory
+               Insufficient memory to perform operation
+               ออออออออออออออออออออออออออออออออออออออออ
+ 
+There is insufficient free memory on your computer to perform the last
+operation that you attempted. The computer memory is used to hold the
+operating system and any programs that you are now running. The
+programs also use part of the memory to store their data.
+::::HelpNoPrinter
+                              No Printer
+                              ออออออออออ
+ 
+Selection of this option will configure the system to have no
+printers. The InfoBench software will not allow a print operation to
+be performed once the system is configured to have no printers.
+ 
+This is different than to not have configured any printers at all. In
+this case, the system will attempt to print, in normal mode, as if
+there is an IBM Matrix printer attached to the "LPT1" device. Most
+printers, except Postscript printers, will accept printed output for
+this mode of operation.
+ 
+You should still configure a printer if you have one, since the
+InfoBench software can print exactly as the hardware expects, once you
+configure your printer(s) accordingly. In many cases, this will
+produce better quality output.
+::::HelpPrtAutoSkip
+                   Automatic skip when page is full
+                   ออออออออออออออออออออออออออออออออ
+ 
+Some printers will automatically eject the current page when the last
+line on a page has been written. Set this check field on (see
+<CHECK_FIELD>) if your printer has this characteristic.
+::::HelpPrtBegCmd
+           Command sent to printer at the start of printing
+           ออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The command entered in this field is sent to the printer at the start
+of printing.
+ 
+See <PRINT_START> for a description of how the configuration
+information is used at the start of printing.
+ 
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtBold
+                                 Bold
+                                 ออออ
+ 
+Characters are printed darker than normal.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtBoldUnder
+                          Bold and Underline
+                          ออออออออออออออออออ
+ 
+Characters are underlined as they are printed. The characters are
+printed darker than normal.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtBotMargin
+                            Bottom Margin
+                            อออออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of lines that are to be skipped at
+the bottom of a page by default. Word processing software will use its
+own value, by default, for the bottom margin.
+::::HelpPrtCfgErr
+         Configuration information is erroneous or incomplete
+         ออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The message indicates an error in the configuration information or the
+absence of a value. Correct or enter the appropriate values.
+ 
+You can cancel the configuration of this printer by pressing the Esc
+(escape) key.
+ 
+For information on how to use the hotspots at the bottom of the
+configuration screen, see <PRINTER_HOTSPOTS>.
+::::HelpPrtColPosn
+                          Column Positioning
+                          ออออออออออออออออออ
+ 
+This command sequence indicates how to position to a column on the
+current print line. If omitted, the positioning is accomplished by
+printing space characters.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtCompress
+                              Compressed
+                              ออออออออออ
+ 
+Compressed characters are printed. These characters are narrower, but
+have the same height as normal characters. The WATCOM Accounting
+System prints reports in compressed mode when the mode is available
+and the normal page width is less than 120 characters.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtCopy
+                    Select a printer to be copied
+                    อออออออออออออออออออออออออออออ
+ 
+You are presented with a list of the names of configured printers, as
+radio buttons. Select the printer whose configuration you wish to
+copy.
+ 
+For a description of how to select a printer, see <HelpSelPrinter>.
+::::HelpPrtCR
+                           Carriage return
+                           อออออออออออออออ
+ 
+This command sequence is used to position the printing position at the
+start of the current line. If omitted, a ASCII carriage return is
+used.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtDevice
+                             Printer Type
+                             ออออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the type of printer that is being configured.
+Normally, you would change this name only if a new type of printer was
+being configured.
+ 
+Certain InfoBench software packages, such as WATCOM GML and the
+Business Graphics, will use the name in this field to determine
+device-specific actions.
+::::HelpPrtDouble
+                                Double
+                                ออออออ
+ 
+Double-sized characters are printed. These characters are wider and
+taller than normal charcters.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtEndCmd
+            Command sent to printer at the end of printing
+            ออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The command entered in this field is sent to the printer at the end of
+printing.
+ 
+See <PRINT_END> for a description of how the configuration information
+is used at the end of printing.
+ 
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtExpand
+                               Expanded
+                               ออออออออ
+ 
+Expanded characters are printed. These characters are wider, but have
+the same height as normal characters.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtItalic
+                               Italics
+                               อออออออ
+ 
+Characters are printed in italics.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtLeftMargin
+                             Left Margin
+                             อออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of columns that are to be left blank
+to the left of the page by default. A column is the size of
+normal-sized character. Word processing software will use its own
+value, by default, for the left margin.
+::::HelpPrtLight
+                                Light
+                                อออออ
+ 
+Characters are printed lighter than normal.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtName
+                             Printer name
+                             ออออออออออออ
+ 
+For details about the hotspots on this window, see <PRINTER_HOTSPOTS>.
+These hotspots (or the associated function keys) are to be used for
+specific printer-configuration actions.
+ 
+This field contains the name of the printer. You should give it a
+meaningful name, especially if more than one printer is to be
+configured.
+ 
+When you select a configured printer, the name in this field is the
+one that will be displayed for selection purposes.
+::::HelpPrtNewLine
+                           Skip to new line
+                           ออออออออออออออออ
+ 
+This command sequence is used to skip to a new line. If omitted, a
+ASCII carriage return followed by an ASCII linefeed is used.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtNewPage
+                           Skip to new page
+                           ออออออออออออออออ
+ 
+This command sequence is used to skip to a new page. If omitted, a
+ASCII formfeed is used.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtNLQ
+                         Near Letter Quality
+                         อออออออออออออออออออ
+ 
+Certain printers have a near-letter-quality (NLQ) mode which produces
+higher quality output than normal. This field contains the command
+sequence to place a printer in this mode.
+ 
+If the sequence is blank, requesting this mode will have no effect.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+::::HelpPrtNormal
+                                Normal
+                                ออออออ
+ 
+Characters in normal mode are printed without any special emphasis.
+ 
+When another phrase type is not defined for a printer, the phrase will
+be printed in normal mode.
+::::HelpPrtOverstrike
+                              Overstrike
+                              ออออออออออ
+ 
+Characters are printed several times in the same position. This mode
+is useful only on impact printers and usually results in darker
+characters.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtPageSize
+                              Page Size
+                              อออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of lines that can be printed on a
+page. The size includes the number of lines for the top and bottom
+margins.
+::::HelpPrtPageWidth
+                              Page Width
+                              ออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of normal-sized characters that can
+be printed across a page. The size includes the number of columns for
+the right and left margins.
+::::HelpPrtPause
+                        Pause at start of page
+                        ออออออออออออออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This check field (see <CHECK_FIELD>) determines whether the workbench
+software will pause before each page is printed. When the field is
+true ("[X]" appears in front), a window is displayed to instruct you
+to position the next page in the printer. In this way you can feed
+individual sheets to your printer.
+ 
+The field should be set to false, if you have continuous-form paper
+loaded in your printer.
+::::HelpPrtPostFile
+                           Completion File
+                           อออออออออออออออ
+ 
+This field names a file which is copied to the printer at the end of
+printing. The file can contain binary codes to complete the printing
+process.
+::::HelpPrtPreFile
+                         Initialization File
+                         อออออออออออออออออออ
+ 
+This field names a file which is copied to the printer at the start of
+printing. The file can contain binary codes to initialize the printer.
+::::HelpPrtRightMargin
+                             Right Margin
+                             ออออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of columns that are to be left blank
+to the right of the page by default. A column is the size of
+normal-sized character. Word processing software will use its own
+value, by default, for the right margin.
+::::HelpPrtSelectDefault
+                    Select a default printer type
+                    อออออออออออออออออออออออออออออ
+ 
+You will see a list of printer types displayed on the screen. If you
+select one of these, the default values for that type of printer will
+become the configuration values for the printer being configured.
+ 
+You can then examine the hardware-independent values (press F4 on the
+main printer-configuration window) to see that these values are
+appropriate for the printer in question.
+ 
+If your printer is not one of the types listed, consult the
+documentation for that printer. It is likely that it is compatible
+with one the ones listed.
+ 
+If your printer is radically different, you can enter the command
+sequences to be used by the InfoBench software to print on your
+printer.
+::::HelpPrtSub
+                              Subscript
+                              อออออออออ
+ 
+Subscript characters are printed.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtSuper
+                             Superscript
+                             อออออออออออ
+ 
+Superscript characters are printed.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpPrtSysBeg
+            DOS Command executed at the start of printing
+            อออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The DOS command in this field is sent to the printer at the start of
+printing. See your DOS manual for a description of DOS commands.
+ 
+See <PRINT_START> for a description of how the configuration
+information is used at the start of printing.
+ 
+::::HelpPrtSysEnd
+             DOS Command executed at the end of printing
+             อออออออออออออออออออออออออออออออออออออออออออ
+ 
+The DOS command in this field is sent to the printer at the end of
+printing. See your DOS manual for a description of DOS commands.
+ 
+See <PRINT_END> for a description of how the configuration information
+is used at the end of printing.
+ 
+::::HelpPrtSysname
+                            System Device
+                            อออออออออออออ
+ 
+For details about the hotspots on this window, see <PRINTER_HOTSPOTS>.
+These hotspots (or the associated function keys) are to be used for
+specific printer-configuration actions.
+ 
+This field contains the DOS device name for the printer which is being
+configured. Printers (most printers) which are connected to parallel
+ports are normally located at "LPT1", "LPT2", and "LPT3". Printers
+which are connected to serial ports are normally located at "COM1",
+"COM2", and "COM3".
+ 
+If your printer is attached to a network, consult the documentation
+for the network about how to specify the device name for the printer.
+::::HelpPrtTopMargin
+                              Top Margin
+                              ออออออออออ
+ 
+If you press F2 you will be presented with a screen in which
+hardware-dependent command sequences can be entered. This is required
+only if you are defining a new type of printer. You will need the
+documentation for the printer in question to be able to enter these
+command sequences.
+ 
+This field represents the number of lines that are to be skipped at
+the top of a page by default. Word processing software will use its
+own value, by default, for the top margin.
+::::HelpPrtUnder
+                              Underline
+                              อออออออออ
+ 
+Characters are underlined as they are printed.
+ 
+When this command sequence is not defined, characters are printed in
+normal mode.
+ 
+Consult the documentation for the WCONFIG program for a description of
+how to enter command sequences.
+ 
+ 
+::::HelpScreenBw
+        Set screen to be black and white (and shades of grey)
+        อออออออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+This menu item will set you screen to be in black and white mode,
+provided that your computer has that capability.
+ 
+This mode will continue to be in effect after you exit from the
+configuration program.
+ 
+WARNING !!
+ออออออออออ
+ 
+If the configuration program has been invoked from another program
+(such as the SHELL), the original program will not know about the
+changed monitor characteristics. This can result in the screen
+appearing odd or blank when you exit from the configuration program.
+ 
+You can avoid this unfortunate circumstance by resetting the screen
+mode to the mode that was present when the configuration program was
+started.
+ 
+::::HelpScreenColour
+                       Set screen to be colour
+                       อออออออออออออออออออออออ
+ 
+This menu item will set you screen to be in colour mode, provided that
+your computer has that capability.
+ 
+This mode will continue to be in effect after you exit from the
+configuration program.
+ 
+WARNING !!
+ออออออออออ
+ 
+If the configuration program has been invoked from another program
+(such as the SHELL), the original program will not know about the
+changed monitor characteristics. This can result in the screen
+appearing odd or blank when you exit from the configuration program.
+ 
+You can avoid this unfortunate circumstance by resetting the screen
+mode to the mode that was present when the configuration program was
+started.
+ 
+::::HelpScreenMono
+                     Set screen to be monochrome
+                     อออออออออออออออออออออออออออ
+ 
+This menu item will set you screen to be in monochrome mode, provided
+that your computer has that capability.
+ 
+This mode will continue to be in effect after you exit from the
+configuration program.
+ 
+WARNING !!
+ออออออออออ
+ 
+If the configuration program has been invoked from another program
+(such as the SHELL), the original program will not know about the
+changed monitor characteristics. This can result in the screen
+appearing odd or blank when you exit from the configuration program.
+ 
+You can avoid this unfortunate circumstance by resetting the screen
+mode to the mode that was present when the configuration program was
+started.
+ 
+::::HelpScreenMonoGr
+              Set screen to be monochrome, for graphics
+              อออออออออออออออออออออออออออออออออออออออออ
+ 
+This menu item will set you screen to be in monochrome mode for
+graphics, provided that your computer has that capability. This mode
+is actually monochrome text mode to enable you to set screen
+attributes for graphics programs (such as Business Graphics in WATFILE
+and the WATCOM Spreadsheet). The attributes are used by the programs
+when monochrome mode is employed for the graphics display.
+ 
+This mode will continue to be in effect after you exit from the
+configuration program.
+ 
+WARNING !!
+ออออออออออ
+ 
+If the configuration program has been invoked from another program
+(such as the SHELL), the original program will not know about the
+changed monitor characteristics. This can result in the screen
+appearing odd or blank when you exit from the configuration program.
+ 
+You can avoid this unfortunate circumstance by resetting the screen
+mode to the mode that was present when the configuration program was
+started.
+ 
+::::HelpSelPrinter
+                        Select current printer
+                        ออออออออออออออออออออออ
+ 
+This menu item is used to select the default printer to be used when
+more than one printer has been configured for your system.
+::::HelpSystem
+                     Unable to load: COMMAND.COM
+                     อออออออออออออออออออออออออออ
+ 
+The program was unable to load COMMAND.COM which is the DOS command
+interpreter that processes the DOS commands that you type. The most
+likely cause of this problem is that there is insufficient free memory
+on your computer to contain this program.
+::::HelpWpOtherEmphasis
+             Emphasized text in word processing software
+             อออออออออออออออออออออออออออออออออออออออออออ
+ 
+Select this item to configure the screen attribute for emphasized text
+used by word-processing software. This is used by the Waterloo Word
+Processor to highlight emphasized (other than bold or underlined)
+text.
+::::HOT_LETTER
+            Hot Letter in names of menus and in menu items
+            ออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+When a menu is pulled down or when the menu bar is activated or could
+be activated, you can observe that there is one letter in each name
+that is high-lighted differently from the other letters in the name.
+This high-lighted letter is called the "hot letter".
+ 
+If you type a letter which is a hot letter, it is equivalent to moving
+the cursor to that field and then pressing the ENTER key. This means
+that you can use the keyboard to quickly select menu items.
+ 
+As an example, consider the sequence:
+       Alt  c  x
+When the menus can be activated, this sequence will exit from your
+current application:
+       Alt - activates the menu
+       c   - pulls down the Control menu (hot letter "c")
+       x   - chooses the Exit item (hot letter "x")
+Similarly, the sequence
+       Alt  f  g
+will choose the Get menu item from a File menu.
+::::INDEX
+                          Index for WCONFIG
+                          อออออออออออออออออ
+ 
+<FileBrowser>  - description of file browser
+<Hot_Letter>   - hot letters in menus
+<Menus>        - how to use menus
+<Mouse>        - how the mouse can be used
+<Print_start>  - how the configured information is used, before
+                 printing
+<Print_end>    - how the configured information is used, after
+                 printing
+<SnowCheck>    - description of snow-checking
+::::PRINT_END
+           How the configuration information after printing
+           ออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+After printing, the configuration information is used in the following
+order:
+ 
+If a file exists to be sent to the printer after printing, it is sent.
+ 
+If a printer command exists to be sent to the printer after printing,
+it is sent.
+ 
+If a DOS command exists to be executed after printing, it is executed.
+ 
+See <PRINT_START> for a description of how the configuration
+information is used before printing.
+::::PRINT_START
+          How the configuration information before printing
+          อออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+Before printing, the configuration information is used in the
+following order:
+ 
+If a DOS command exists to be executed before printing, it is
+executed.
+ 
+If a printer command exists to be sent to the printer before printing,
+it is sent.
+ 
+If a file exists to be sent to the printer before printing, it is
+sent.
+ 
+The printing now takes place.
+ 
+See <PRINT_END> for a description of how the configuration information
+is used after printing.
+::::PRINTER_HOTSPOTS
+                   Configuration Actions (hotspots)
+                   ออออออออออออออออออออออออออออออออ
+ 
+The hotspots to the bottom of the window containing the printer name
+and the device name contain a function key name and brief description
+of the action that will take place if that function key is pressed.
+ 
+Once you have completed configuring the printer, press the ENTER key
+and the configuration information for the printer will be permanently
+stored. You can cancel the configuring of the current printer by
+pressing the Esc (escape) key.
+ 
+F2 = Default
+ออออออออออออ
+ 
+If you press F2, you will be presented with a list of the types of
+printers for which there is pre-defined configuration information.
+Select the printer type which matches the printer you are configuring.
+ 
+If you have a printer which is not one of the types found on the list,
+consult the documentation for that printer. You are likely to discover
+that it is compatible with one of the ones on the list and so the
+compatible printer type can be selected.
+ 
+If you have a printer which uses command sequences (these will be
+documented in your printer documentation) that are different from any
+of those predefined, you can enter these in the hardware-dependent
+window which can be obtained by pressing F4 and then F2.
+ 
+F3 = Copy
+อออออออออ
+ 
+If you press F3, you will be presented with a list of the printers
+that have been configured. If you then select one of these, the
+configuration data for the selected printer will be copied to the data
+for the printer being configured.
+ 
+This function is useful if you are configuring a printer which is
+similar to one already configured. Rather than starting from scratch,
+it may be easier to copy the configured values and then to change a
+few of the values or names.
+ 
+F4 = Edit
+อออออออออ
+ 
+If you press F4, you will obtain a screen of hardware-independent
+configuration values which can be edited. These values include the
+page sizes, margin sizes, and whether to pause at the start of each
+page.
+ 
+F6 = Delete
+อออออออออออ
+ 
+If you press F6, the current printer is deleted from the configuration
+::::SET_ATTRIBUTE
+You are currently within a window which contains:
+   (1) Sample text at the top.
+   (2) A vertical list of background colours or shades.
+   (3) A vertical list of foreground colours or shades.
+   (4) A numeric field giving the current attribute value.
+The lists of colours or shades will depend upon the type of monitor
+that is attached to your computer.
+ 
+You can set the colour or shade for the current attribute by setting a
+combination of background and foreground colours or shades. As you
+change a radio button, the sample text at the top will change to
+reflect the colour combination that is current. As well, the value of
+the attribute in the numeric field will change to reflect your new
+choice.
+ 
+You can move between the lists and the numeric field by pressing the
+TAB keys.
+ 
+You can also explicitly enter an attribute value by changing the
+numeric attribute field.
+ 
+When you have a suitable colour or shade combination, press the ENTER
+key and that attribute will be remembered. You can cancel the
+attribute-configuration by pressing the Esc (escape) key; the
+attribute being configured will be unchanged.
+::::SnowCheck
+                         Snow-checking method
+                         ออออออออออออออออออออ
+ 
+On some monitors (attached to the colour graphics adapter (CGA)),
+interference (called snow) will appear on the screen if software
+writes to the monitor without special care.
+ 
+Normally, the InfoBench software tests to see if such an adapter is
+present. When one is detected, the software writes to the screen only
+when snow will not be produced. While this is more appealing visually,
+it does slow down the rate with which information can be displayed.
+ 
+In some cases (many portable computers and on the Unisys ICON
+computer) the hardware appears to be a CGA device but does not require
+snow checking. For this reason, the InfoBench software can be
+configured to:
+   (1) write to the screen without snow checking
+   (2) check for snow while writing to the screen
+   (3) test the hardware to decide if (1) or (2)

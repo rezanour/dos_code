@@ -1,0 +1,1449 @@
+::::_ARC
+#include \<graph.h>
+short _FAR _arc( short x1, short y1,
+		 short x2, short y2,
+		 short x3, short y3,
+		 short x4, short y4 );
+
+short _FAR _arc_w( double x1, double y1,
+		   double x2, double y2,
+		   double x3, double y3,
+		   double x4, double y4 );
+
+short _FAR _arc_wxy( struct _wxycoord _FAR *p1,
+		     struct _wxycoord _FAR *p2,
+		     struct _wxycoord _FAR *p3,
+		     struct _wxycoord _FAR *p4 );
+
+The _arc functions draw elliptical arcs.    The _arc function uses the
+view  coordinate  system.   The _arc_w and _arc_wxy  functions use the
+window coordinate system.
+
+The center of the arc is the center of the  rectangle  established  by
+the points (x1,y1) and (x2,y2).    The arc is a segment of the ellipse
+drawn within this bounding rectangle.	The arc starts at the point on
+this ellipse that intersects the vector from the centre of the ellipse
+to the point (x3,y3).	The arc ends at the point on this ellipse that
+intersects  the  vector  from  the centre of the  ellipse to the point
+(x4,y4).    The arc is drawn in a counter-clockwise direction with the
+current  plot  action  using the  current  color and the  current line
+style.
+
+When the  coordinates  (x1,y1) and (x2,y2) establish a line or a point
+(this  happens	when one or more of the x-coordinates or y-coordinates
+are equal), nothing is drawn.
+
+The current output position for graphics output is set to be the point
+at the end of the arc that was drawn.
+::::_CLEARSCREEN
+#include \<graph.h>
+void _FAR _clearscreen( short area );
+
+The  _clearscreen  function  clears the indicated  "area" and fills it
+with the  background  color.   The "area"  argument must be one of the
+following values:
+
+_GCLEARSCREEN	    area is entire screen
+
+_GVIEWPORT	    area is current viewport or clip region
+
+_GWINDOW	    area is current text window
+::::_DISPLAYCURSOR
+#include \<graph.h>
+short _FAR _displaycursor( short mode );
+
+The  _displaycursor  function  is  used to establish  whether the text
+cursor is to be displayed when graphics functions complete.   On entry
+to a  graphics	function,  the text  cursor is turned  off.   When the
+function  completes, the "mode" setting  determines whether the cursor
+is turned back on.   The "mode" argument can have one of the following
+values:
+
+_GCURSORON	    the cursor will be displayed
+
+_GCURSOROFF	    the cursor will not be displayed
+::::_ELLIPSE
+#include \<graph.h>
+short _FAR _ellipse( short fill, short x1, short y1,
+				 short x2, short y2 );
+
+short _FAR _ellipse_w( short fill, double x1, double y1,
+				   double x2, double y2 );
+
+short _FAR _ellipse_wxy( short fill,
+			 struct _wxycoord _FAR *p1,
+			 struct _wxycoord _FAR *p2 );
+
+The _ellipse functions draw ellipses.	The _ellipse function uses the
+view coordinate system.  The _ellipse_w and _ellipse_wxy functions use
+the window coordinate system.
+
+The center of the  ellipse is the center of the  rectangle established
+by the points (x1,y1) and (x2,y2).
+
+The argument "fill" determines whether the ellipse is filled in or has
+only its outline drawn.  The argument can have one of two values:
+
+_GFILLINTERIOR	    fill  the  interior  by  writing  pixels  with the
+		    current  plot  action using the current  color and
+		    the current fill mask
+
+_GBORDER	    leave the interior	unchanged; draw the outline of
+		    the figure	with the current plot action using the
+		    current color and line style
+
+When the  coordinates  (x1,y1) and (x2,y2) establish a line or a point
+(this  happens	when one or more of the x-coordinates or y-coordinates
+are equal), nothing is drawn.
+::::_FLOODFILL
+#include \<graph.h>
+short _FAR _floodfill( short x, short y,
+		       short stop_color );
+
+short _FAR _floodfill_w( double x, double y,
+			 short stop_color );
+
+The _floodfill functions fill an area of the screen.	The _floodfill
+function uses the view coordinate system.    The _floodfill_w function
+uses the window coordinate system.
+
+The filling starts at the point (x,y) and continues in all directions:
+when a	pixel is filled, the  neighbouring  pixels  (horizontally  and
+vertically)  are then  considered for filling.	 Filling is done using
+the current color and fill mask.    No filling will occur if the point
+(x,y) lies outside the clipping region.
+
+If the	argument  "stop_color"	is a  valid pixel value,  filling will
+occur  in each	direction  until a pixel is  encountered  with a pixel
+value of  "stop_color". The filled area will be the area around (x,y),
+bordered by "stop_color". No filling will occur if the point (x,y) has
+the pixel value "stop_color".
+
+If  "stop_color"  has the value  (-1), filling occurs until a pixel is
+encountered  with a pixel  value different from the pixel value of the
+starting point (x,y).  No filling will occur if the pixel value of the
+point (x,y) is the current color.
+::::_GETACTIVEPAGE
+#include \<graph.h>
+short _FAR _getactivepage( void );
+
+The  _getactivepage  function  returns	the  number  of the  currently
+selected active graphics page.
+
+Only  some  combinations  of video modes and hardware  allow  multiple
+pages of graphics to exist.   When  multiple  pages are supported, the
+active page may differ from the visual page.  The graphics information
+in the visual  page  determines  what is  displayed  upon the  screen.
+Animation  may be  accomplished  by  alternating  the visual page.   A
+graphics  page	can be	constructed  without  affecting  the screen by
+setting the active page to be different than the visual page.
+
+The number of  available  video  pages can be  determined by using the
+_getvideoconfig function.  The default video page is 0.
+::::_GETARCINFO
+#include \<graph.h>
+short _FAR _getarcinfo( struct xycoord _FAR *start_pt,
+			struct xycoord _FAR *end_pt,
+			struct xycoord _FAR *inside_pt );
+
+The  _getarcinfo  function  returns  information  about  the  arc most
+recently  drawn  by  the  _arc	or  _pie  functions.	The  arguments
+"start_pt"  and  "end_pt" are set to contain the endpoints of the arc.
+The  argument  "inside_pt"  will  contain the  coordinates  of a point
+within the pie.    The points are all specified in the view coordinate
+system.
+
+The  endpoints	of the arc can be used to  connect  other lines to the
+arc.  The interior point can be used to fill the pie.
+::::_GETBKCOLOR
+#include \<graph.h>
+long _FAR _getbkcolor( void );
+
+The  _getbkcolor  function  returns the current background color.   In
+text  modes,  the  background  color  controls	the  area  behind each
+individual character.  In graphics modes, the background refers to the
+entire screen.	The default background color is 0.
+::::_GETCLIPRGN
+#include \<graph.h>
+void _FAR _getcliprgn( short _FAR *x1, short _FAR *y1,
+		       short _FAR *x2, short _FAR *y2 );
+
+The  _getcliprgn function returns the location of the current clipping
+region.    A  clipping	region	is  defined  with the  _setcliprgn  or
+_setviewport functions.  By default, the clipping region is the entire
+screen.
+
+The  current  clipping	region is a  rectangular area of the screen to
+which  graphics  output  is  restricted.   The top left  corner of the
+clipping region is placed in the arguments (x1,y1).   The bottom right
+corner of the clipping region is placed in (x2,y2).
+::::_GETCOLOR
+#include \<graph.h>
+short _FAR _getcolor( void );
+
+The  _getcolor function returns the pixel value for the current color.
+This is the color used for  displaying	graphics output.   The default
+color  value  is one  less  than the  maximum  number of colors in the
+current video mode.
+::::_GETCURRENTPOSITION
+#include \<graph.h>
+struct xycoord _FAR _getcurrentposition( void );
+
+struct _wxycoord _FAR _getcurrentposition_w( void );
+
+The  _getcurrentposition  functions return the current output position
+for graphics.	 The _getcurrentposition function returns the point in
+view  coordinates.   The  _getcurrentposition_w  function  returns the
+point in window coordinates.
+
+The  current  position defaults to the origin, (0,0), when a new video
+mode  is  selected.   It is changed by	successful  calls to the _arc,
+_moveto and _lineto functions as well as the _setviewport function.
+
+Note that the output  position for graphics  output  differs from that
+for text  output.   The output	position for text output can be set by
+use of the _settextposition function.
+::::_GETFILLMASK
+#include \<graph.h>
+unsigned char _FAR * _FAR
+    _getfillmask( unsigned char _FAR *mask );
+
+The  _getfillmask  function copies the current fill mask into the area
+located by the argument "mask". The fill mask is used by the _ellipse,
+_floodfill,  _pie, _polygon and _rectangle functions that fill an area
+of the screen.
+
+The fill mask is an  eight-byte array which is interpreted as a square
+pattern  (8 by 8) of 64 bits.	Each bit in the mask  corresponds to a
+pixel.	 When a  region is filled,  each point in the region is mapped
+onto the fill mask.   When a bit from the mask is one, the pixel value
+of the	corresponding  point is set using the current  plotting action
+with the  current color; when the bit is zero, the pixel value of that
+point is not affected.
+
+When the fill mask is not set, a fill operation will set all points in
+the fill region to have a pixel value of the current color.
+::::_GETIMAGE
+#include \<graph.h>
+void _FAR _getimage( short x1, short y1,
+		     short x2, short y2,
+		     char _HUGE *image );
+
+void _FAR _getimage_w( double x1, double y1,
+		       double x2, double y2,
+		       char _HUGE *image );
+
+void _FAR _getimage_wxy( struct _wxycoord _FAR *p1,
+			 struct _wxycoord _FAR *p2,
+			 char _HUGE *image );
+
+The _getimage functions store a copy of an area of the screen into the
+buffer indicated by the "image" argument.  The _getimage function uses
+the  view  coordinate  system.	  The  _getimage_w  and  _getimage_wxy
+functions use the window coordinate system.
+
+The screen image is the rectangular area defined by the points (x1,y1)
+and (x2,y2).	The buffer "image" must be large enough to contain the
+image (the size of the image can be determined by using the _imagesize
+function).    The image may be displayed upon the screen at some later
+time by using the _putimage functions.
+::::_GETLINESTYLE
+#include \<graph.h>
+unsigned short _FAR _getlinestyle( void );
+
+The _getlinestyle function returns the current line-style mask.
+
+The  line-style  mask determines the style by which lines and arcs are
+drawn.	 The  mask is  treated	as an array of 16 bits.   As a line is
+drawn,	a  pixel  at a time,  the bits in this	array  are  cyclically
+tested.  When a bit in the array is 1, the pixel value for the current
+point is set using the current color according to the current plotting
+action; otherwise, the pixel value for the point is left unchanged.  A
+solid line would result from a value of 0xFFFF and a dashed line would
+result from a value of 0xF0F0.
+
+The default line style mask is 0xFFFF.
+::::_GETPHYSCOORD
+#include \<graph.h>
+struct xycoord _FAR _getphyscoord( short x, short y );
+
+The  _getphyscoord  function  returns the physical  coordinates of the
+position with view coordinates (x,y).  View coordinates are defined by
+the _setvieworg and _setviewport functions.
+::::_GETPIXEL
+#include \<graph.h>
+short _FAR _getpixel( short x, short y );
+
+short _FAR _getpixel_w( double x, double y );
+
+The  _getpixel	functions  return  the	pixel value for the point with
+coordinates  (x,y).   The  _getpixel function uses the view coordinate
+system.  The _getpixel_w function uses the window coordinate system.
+::::_GETPLOTACTION
+#include \<graph.h>
+short _FAR _getplotaction( void );
+
+The _getplotaction function returns the current plotting action.
+
+The drawing functions cause pixels to be set with a pixel value.    By
+default,  the value to be set is  obtained  by	replacing the original
+pixel  value  with the	supplied  pixel  value.    Alternatively,  the
+replaced  value may be	computed as a function of the original and the
+supplied pixel values.
+
+The plotting action can have one of the following values:
+
+_GPSET		    replace  the original  screen pixel value with the
+		    supplied pixel value
+
+_GAND		    replace  the original  screen pixel value with the
+		    bitwise  and of the  original  pixel value and the
+		    supplied pixel value
+
+_GOR		    replace  the original  screen pixel value with the
+		    bitwise  or of the	original  pixel  value and the
+		    supplied pixel value
+
+_GXOR		    replace  the original  screen pixel value with the
+		    bitwise  exclusive-or  of the original pixel value
+		    and  the supplied  pixel value.   Performing  this
+		    operation  twice will restore the original	screen
+		    contents, providing an efficient method to produce
+		    animated effects.
+::::_GETTEXTCOLOR
+#include \<graph.h>
+short _FAR _gettextcolor( void );
+
+The _gettextcolor function returns the pixel value of the current text
+color.	  This is the color used for displaying text with the _outtext
+and  _outmem  functions.   The	default  text color  value is set to 7
+whenever a new video mode is selected.
+::::_GETTEXTCURSOR
+#include \<graph.h>
+short _FAR _gettextcursor( void );
+
+The  _gettextcursor  function returns the current cursor attribute, or
+shape.	The cursor shape is set with the _settextcursor function.  See
+the _settextcursor function for a description of the value returned by
+the _gettextcursor function.
+::::_GETTEXTEXTENT
+#include \<graph.h>
+void _FAR _gettextextent( short x, short y,
+			  char _FAR *text,
+			  struct xycoord _FAR *concat,
+			  struct xycoord _FAR *extent );
+
+The  _gettextextent function simulates the effect of using the _grtext
+function  to display  the text	string	"text" at the  position (x,y),
+using the current text settings.   The concatenation point is returned
+in the argument "concat". The text extent parallelogram is returned in
+the array "extent".
+
+The  concatenation  point is the  position to use to output text after
+the given  string.   The text extent  parallelogram  outlines the area
+where  the  text  string  would be  displayed.	  The four  points are
+returned  in  counter-clockwise  order,  starting  at  the  upper-left
+corner.
+::::_GETTEXTPOSITION
+#include \<graph.h>
+struct rccoord _FAR _gettextposition( void );
+
+The  _gettextposition function returns the current output position for
+text.  This position is in terms of characters, not pixels.
+
+The  current  position	defaults to the top left corner of the screen,
+(1,1), when a new video mode is selected.  It is changed by successful
+calls to the _outtext,	_outmem,  _settextposition  and _settextwindow
+functions.
+
+Note that the output  position for graphics  output  differs from that
+for text output.    The output position for graphics output can be set
+by use of the _moveto function.
+::::_GETTEXTSETTINGS
+#include \<graph.h>
+struct textsettings _FAR * _FAR _gettextsettings
+    ( struct textsettings _FAR *settings );
+
+The  _gettextsettings  function returns  information about the current
+text  settings	used when text is  displayed  by the _grtext function.
+The  information is stored in the  textsettings structure indicated by
+the argument  "settings".  The structure contains the following fields
+(all are short fields):
+
+basevectorx	    x-component of the current base vector
+
+basevectory	    y-component of the current base vector
+
+path		    current text path
+
+height		    current text height (in pixels)
+
+width		    current text width (in pixels)
+
+spacing 	    current text spacing (in pixels)
+
+horizalign	    horizontal component of the current text alignment
+
+vertalign	    vertical component of the current text alignment
+::::_GETTEXTWINDOW
+#include \<graph.h>
+void _FAR _gettextwindow(
+		short _FAR *row1, short _FAR *col1,
+		short _FAR *row2, short _FAR *col2 );
+
+The  _gettextwindow  function returns the location of the current text
+window.   A text window is defined with the  _settextwindow  function.
+By default, the text window is the entire screen.
+
+The  current  text  window is a rectangular area of the screen.   Text
+display is restricted to be within this window.    The top left corner
+of the text window is placed in the arguments (row1,col1).  The bottom
+right corner of the text window is placed in (row2,col2).
+::::_GETVIDEOCONFIG
+#include \<graph.h>
+struct videoconfig _FAR * _FAR _getvideoconfig
+    ( struct videoconfig _FAR *config );
+
+The  _getvideoconfig  function returns	information  about the current
+video  mode  and the  hardware	configuration.	  The  information  is
+returned  in  the  videoconfig	structure  indicated  by the  argument
+"config".  The	structure contains the following fields (all are short
+fields):
+
+numxpixels	    number of pixels in x-axis
+
+numypixels	    number of pixels in y-axis
+
+numtextcols	    number of text columns
+
+numtextrows	    number of text rows
+
+numcolors	    number of actual colors
+
+bitsperpixel	    number of bits in a pixel value
+
+numvideopages	    number of video pages
+
+mode		    current video mode
+
+adapter 	    adapter type
+
+monitor 	    monitor type
+
+memory		    number  of kilobytes  (1024  characters)  of video
+		    memory
+::::_GETVIEWCOORD
+#include \<graph.h>
+struct xycoord _FAR _getviewcoord( short x, short y );
+
+struct xycoord _FAR _getviewcoord_w( double x, double y );
+
+struct xycoord _FAR _getviewcoord_wxy(
+		    struct _wxycoord _FAR *p );
+
+The  _getviewcoord  functions  translate  a point  from one coordinate
+system to viewport coordinates.  The _getviewcoord function translates
+the point (x,y) from physical  coordinates.   The  _getviewcoord_w and
+_getviewcoord_wxy  functions  translate  the  point  from  the	window
+coordinate system.
+
+Viewport  coordinates  are defined by the _setvieworg and _setviewport
+functions.  Window coordinates are defined by the _setwindow function.
+
+Note:	 In  previous  versions  of the  software,  the  _getviewcoord
+function was called _getlogcoord.
+::::_GETVISUALPAGE
+#include \<graph.h>
+short _FAR _getvisualpage( void );
+
+The  _getvisualpage  function  returns	the  number  of the  currently
+selected visual graphics page.
+
+Only  some  combinations  of video modes and hardware  allow  multiple
+pages of graphics to exist.   When  multiple  pages are supported, the
+active page may differ from the visual page.  The graphics information
+in the visual  page  determines  what is  displayed  upon the  screen.
+Animation  may be  accomplished  by  alternating  the visual page.   A
+graphics  page	can be	constructed  without  affecting  the screen by
+setting the active page to be different than the visual page.
+
+The number of  available  video  pages can be  determined by using the
+_getvideoconfig function.  The default video page is 0.
+::::_GETWINDOWCOORD
+#include \<graph.h>
+struct _wxycoord _FAR _getwindowcoord( short x, short y );
+
+The  _getwindowcoord  function	returns the window  coordinates of the
+position with view coordinates (x,y).	Window coordinates are defined
+by the _setwindow function.
+::::_GRSTATUS
+#include \<graph.h>
+short _FAR _grstatus( void );
+
+The  _grstatus function returns the status of the most recently called
+graphics  library  function.   The  function  can be  called after any
+graphics  function  to	determine if any errors or warnings  occurred.
+The  function  returns	0 if the  previous  function  was  successful.
+Values	less than 0 indicate  an error occurred; values greater than 0
+indicate a warning condition.
+
+The following values can be returned:
+
+    Constant		  Value  Explanation
+
+    _GROK		    0	 no error
+    _GRERROR		   -1	 graphics error
+    _GRMODENOTSUPPORTED    -2	 video mode not supported
+    _GRNOTINPROPERMODE	   -3	 function n/a in this mode
+    _GRINVALIDPARAMETER    -4	 invalid parameter(s)
+    _GRINSUFFICIENTMEMORY  -5	 out of memory
+    _GRNOOUTPUT 	    1	 nothing was done
+    _GRCLIPPED		    2	 output clipped
+::::_GRTEXT
+#include \<graph.h>
+short _FAR _grtext( short x, short y,
+		    char _FAR *text );
+
+short _FAR _grtext_w( double x, double y,
+		      char _FAR *text );
+
+The  _grtext  functions  display  a  character	string.    The _grtext
+function uses the view coordinate system.  The _grtext_w function uses
+the window coordinate system.
+
+The character string "text" is displayed at the point (x,y).  The text
+is displayed in the current color using the current text settings.
+
+Graphics  text	differs  from  the  text  displayed  by  the  _outtext
+function.   Characters	are  drawn  as a  sequence  of line  segments.
+Graphics  text	can  be  drawn	in  different  sizes,  with  different
+orientations and alignments.	The text displayed by the _outtext and
+_outmem  functions  uses the system BIOS, and can be displayed in only
+one size.
+::::_IMAGESIZE
+#include \<graph.h>
+long _FAR _imagesize( short x1, short y1,
+		      short x2, short y2 );
+
+long _FAR _imagesize_w( double x1, double y1,
+			double x2, double y2 );
+
+long _FAR _imagesize_wxy( struct _wxycoord _FAR *p1,
+			  struct _wxycoord _FAR *p2 );
+
+The _imagesize functions compute the number of bytes required to store
+a screen  image.   The	_imagesize  function  uses the view coordinate
+system.   The _imagesize_w and _imagesize_wxy functions use the window
+coordinate system.
+
+The screen image is the rectangular area defined by the points (x1,y1)
+and (x2,y2).  The storage area used by the _getimage functions must be
+at least this large (in bytes).
+::::_LINETO
+#include \<graph.h>
+short _FAR _lineto( short x, short y );
+
+short _FAR _lineto_w( double x, double y );
+
+The _lineto functions draw straight lines.   The _lineto function uses
+the view  coordinate  system.	The _lineto_w function uses the window
+coordinate system.
+
+The  line  is  drawn  from the	current  position  to the point at the
+coordinates (x,y).   The point (x,y) becomes the new current position.
+The line is drawn with the  current  plotting action using the current
+line style and the current color.
+::::_MOVETO
+#include \<graph.h>
+struct xycoord _FAR _moveto( short x, short y );
+
+struct _wxycoord _FAR _moveto_w( double x, double y );
+
+The _moveto  functions	set the current  output position for graphics.
+The _moveto function uses the view coordinate system.	 The _moveto_w
+function uses the window coordinate system.
+
+The  current output position is set to be the point at the coordinates
+(x,y).	  Nothing is drawn by the function.  The _lineto function uses
+the  current  output  position	as the	starting  point when a line is
+drawn.
+
+Note that the output  position for graphics  output  differs from that
+for text  output.   The output	position for text output can be set by
+use of the _settextposition function.
+::::_OUTMEM
+#include \<graph.h>
+void _FAR _outmem( char _FAR *text, short length );
+
+The _outmem  function  displays the character  string indicated by the
+argument  "text".  The	argument  "length"  specifies  the  number  of
+characters  to be displayed.   Unlike the _outtext  function,  _outmem
+will display the graphical  representation of characters such as ASCII
+10 and 0, instead of interpreting them as control characters.
+
+The  text  is	displayed  using  the  current	text  color  (see  the
+_settextcolor  function),  starting  at the current text position (see
+the  _settextposition  function).   The text  position	is  updated to
+follow the end of the displayed text.
+
+The  text  displayed  by the _outtext and _outmem  functions  uses the
+system BIOS, and can be displayed in any video mode.   Another form of
+text  is  available  with  the _grtext	function.    Graphics  text is
+displayed  as a  sequence  of  line  segments,	and  can be  drawn  in
+different sizes, with different orientations and alignments.
+::::_OUTTEXT
+#include \<graph.h>
+void _FAR _outtext( char _FAR *text );
+
+The _outtext  function	displays the character string indicated by the
+argument  "text".  The string  must be	terminated by a null character
+('\0').   When a  line-feed  character	('\n') is  encountered	in the
+string,  the characters following will be displayed on the next row of
+the screen.
+
+The  text  is	displayed  using  the  current	text  color  (see  the
+_settextcolor  function),  starting  at the current text position (see
+the  _settextposition  function).   The text  position	is  updated to
+follow the end of the displayed text.
+
+The  text  displayed  by the _outtext and _outmem  functions  uses the
+system BIOS, and can be displayed in any video mode.   Another form of
+text  is  available  with  the _grtext	function.    Graphics  text is
+displayed  as a  sequence  of  line  segments,	and  can be  drawn  in
+different sizes, with different orientations and alignments.
+::::_PIE
+#include \<graph.h>
+short _FAR _pie( short fill, short x1, short y1,
+			     short x2, short y2,
+			     short x3, short y3,
+			     short x4, short y4 );
+
+short _FAR _pie_w( short fill, double x1, double y1,
+			       double x2, double y2,
+			       double x3, double y3,
+			       double x4, double y4 );
+
+short _FAR _pie_wxy( short fill,
+		     struct _wxycoord _FAR *p1,
+		     struct _wxycoord _FAR *p2,
+		     struct _wxycoord _FAR *p3,
+		     struct _wxycoord _FAR *p4 );
+
+The _pie functions draw pie-shaped wedges.  The _pie function uses the
+view  coordinate  system.   The _pie_w and _pie_wxy  functions use the
+window coordinate system.
+
+The  pie  wedges  are drawn by drawing an  elliptical  arc (in the way
+described  for the _arc  functions) and then joining the center of the
+rectangle that contains the ellipse to the two endpoints of the arc.
+
+The  elliptical  arc is  drawn	with  its  center at the center of the
+rectangle established by the points (x1,y1) and (x2,y2).  The arc is a
+segment of the ellipse drawn within this bounding rectangle.   The arc
+starts at the point on this  ellipse  that  intersects the vector from
+the centre of the ellipse to the point (x3,y3).    The arc ends at the
+point on this  ellipse	that  intersects the vector from the centre of
+the   ellipse	to  the  point	(x4,y4).    The  arc  is  drawn  in  a
+counter-clockwise  direction  with the	current  plot action using the
+current color and the current line style.
+
+When the  coordinates  (x1,y1) and (x2,y2) establish a line or a point
+(this  happens	when one or more of the x-coordinates or y-coordinates
+are equal), nothing is drawn.
+
+The argument  "fill" determines whether the figure is filled in or has
+only its outline drawn.  The argument can have one of two values:
+
+_GFILLINTERIOR	    fill  the  interior  by  writing  pixels  with the
+		    current  plot  action using the current  color and
+		    the current fill mask
+
+_GBORDER	    leave the interior	unchanged; draw the outline of
+		    the figure	with the current plot action using the
+		    current color and line style
+::::_POLYGON
+#include \<graph.h>
+short _FAR _polygon( short fill, short numpts,
+		     struct xycoord _FAR *points );
+
+short _FAR _polygon_w( short fill, short numpts,
+		       double _FAR *points );
+
+short _FAR _polygon_wxy( short fill, short numpts,
+			 struct _wxycoord _FAR *points );
+
+The _polygon functions draw polygons.	The _polygon function uses the
+view coordinate system.  The _polygon_w and _polygon_wxy functions use
+the window coordinate system.
+
+The polygon is defined as containing "numpts" points whose coordinates
+are given in the array "points".
+
+The argument "fill" determines whether the polygon is filled in or has
+only its outline drawn.  The argument can have one of two values:
+
+_GFILLINTERIOR	    fill  the  interior  by  writing  pixels  with the
+		    current  plot  action using the current  color and
+		    the current fill mask
+
+_GBORDER	    leave the interior	unchanged; draw the outline of
+		    the figure	with the current plot action using the
+		    current color and line style
+::::_PUTIMAGE
+#include \<graph.h>
+void _FAR _putimage( short x, short y,
+		     char _HUGE *image, short mode );
+
+void _FAR _putimage_w( double x, double y,
+		       char _HUGE *image, short mode );
+
+The  _putimage	functions  display  the screen image  indicated by the
+argument  "image".  The  _putimage  function uses the view  coordinate
+system.  The _putimage_w function uses the window coordinate system.
+
+The  image  is	displayed  upon  the screen  with its top left	corner
+located at the point with coordinates (x,y).  The image was previously
+saved  using  the  _getimage  functions.   The image is displayed in a
+rectangle whose size is the size of the rectangular image saved by the
+_getimage functions.
+
+The image can be  displayed  in a number of ways,  depending  upon the
+value of the "mode"  argument.	 This  argument can have the following
+values:
+
+_GPSET		    replace  the  rectangle on the screen by the saved
+		    image
+
+_GPRESET	    replace the rectangle on the screen with the pixel
+		    values of the saved image  inverted; this produces
+		    a negative image
+
+_GAND		    produce  a	new  image  on the  screen  by	ANDing
+		    together  the pixel  values  from the screen  with
+		    those from the saved image
+
+_GOR		    produce  a	new  image  on	the  screen  by  ORing
+		    together  the pixel  values  from the screen  with
+		    those from the saved image
+
+_GXOR		    produce  a new  image on the  screen  by exclusive
+		    ORing  together  the pixel	values from the screen
+		    with  those  from  the saved  image; the  original
+		    screen is  restored by two successive calls to the
+		    _putimage  function with this value,  providing an
+		    efficient method to produce animated effects
+::::_RECTANGLE
+#include \<graph.h>
+short _FAR _rectangle( short fill,
+		       short x1, short y1,
+		       short x2, short y2 );
+
+short _FAR _rectangle_w( short fill,
+			 double x1, double y1,
+			 double x2, double y2 );
+
+short _FAR _rectangle_wxy( short fill,
+			   struct _wxycoord _FAR *p1,
+			   struct _wxycoord _FAR *p2 );
+
+The  _rectangle  functions draw rectangles.   The _rectangle  function
+uses the view coordinate system.   The _rectangle_w and _rectangle_wxy
+functions use the window coordinate system.
+
+The  rectangle is defined with	opposite  corners  established	by the
+points (x1,y1) and (x2,y2).
+
+The argument  "fill"  determines whether the rectangle is filled in or
+has only its outline drawn.  The argument can have one of two values:
+
+_GFILLINTERIOR	    fill  the  interior  by  writing  pixels  with the
+		    current  plot  action using the current  color and
+		    the current fill mask
+
+_GBORDER	    leave the interior	unchanged; draw the outline of
+		    the figure	with the current plot action using the
+		    current color and line style
+::::_REMAPALLPALETTE
+#include \<graph.h>
+short _FAR _remapallpalette( long _FAR *colors );
+
+The  _remapallpalette  function  sets (or remaps) all of the colors in
+the  palette.	The color  values in the  palette  are replaced by the
+array of color values given by the argument "colors". This function is
+supported  in all  video  modes, but only works with EGA, MCGA and VGA
+adapters.
+
+The array "colors" must contain at least as many elements as there are
+supported colors.    The newly mapped palette will cause the screen to
+change color wherever there is a pixel value of a changed color in the
+palette.
+
+The  representation  of colors	depends upon the hardware  being used.
+The number of colors in the  palette  can be  determined  by using the
+_getvideoconfig function.
+::::_REMAPPALETTE
+#include \<graph.h>
+long _FAR _remappalette( short pixval, long color );
+
+The _remappalette function sets (or remaps) the palette color "pixval"
+to be the color  "color".  This  function  is  supported  in all video
+modes, but only works with EGA, MCGA and VGA adapters.
+
+The  argument "pixval" is an index in the color palette of the current
+video mode.  The argument "color" specifies the actual color displayed
+on the screen by pixels  with pixel  value  "pixval". Color values are
+selected by  specifying  the red, green and blue intensities that make
+up  the  color.   Each	intensity  can be in the  range  from 0 to 63,
+resulting in 262144  possible  different colors.   A given color value
+can be	conveniently  specified  as a  value of type long.   The color
+value is of the form 0x00bbggrr, where bb is the blue intensity, gg is
+the green intensity and rr is the red intensity of the selected color.
+The file graph.h defines constants containing the color intensities of
+each of the 16 default colors.
+
+The  _remappalette  function takes effect immediately.	 All pixels on
+the screen  which have a pixel	value  equal to the value of  "pixval"
+will now have the color indicated by the argument "color".
+::::_SCROLLTEXTWINDOW
+#include \<graph.h>
+void _FAR _scrolltextwindow( short rows );
+
+The  _scrolltextwindow	function scrolls the lines in the current text
+window.   A text window is defined with the  _settextwindow  function.
+By default, the text window is the entire screen.
+
+The  argument  "rows"  specifies  the  number  of rows to scroll.    A
+positive  value  means to scroll the text window up or towards the top
+of the screen.	 A negative value means to scroll the text window down
+or  towards  the bottom of the	screen.   Specifying  a number of rows
+greater  than the height of the text  window is equivalent to clearing
+the text window with the _clearscreen function.
+
+Two  constants are defined that can be used with the _scrolltextwindow
+function:
+
+_GSCROLLUP	    the  contents  of the text	window are scrolled up
+		    (towards the top of the screen) by one row
+
+_GSCROLLDOWN	    the  contents of the text window are scrolled down
+		    (towards the bottom of the screen) by one row
+::::_SELECTPALETTE
+#include \<graph.h>
+short _FAR _selectpalette( short palnum );
+
+The  _selectpalette  function  selects	the  palette  indicated by the
+argument "palnum" from the color palettes available.  This function is
+only supported by the video modes _MRES4COLOR and _MRESNOCOLOR.
+
+Mode  _MRES4COLOR  supports  four  palettes  of four colors.   In each
+palette,  color 0, the background color, can be any of the 16 possible
+colors.   The  color  values  associated  with	the  other three pixel
+values, (1, 2 and 3), are determined by the selected palette.
+
+The following table outlines the available color palettes:
+
+    Palette		 Pixel Values
+    Number    1 	      2 	      3
+
+       0     green	     red	     brown
+       1     cyan	     magenta	     white
+       2     light green     light red	     yellow
+       3     light cyan      light magenta   bright white
+::::_SETACTIVEPAGE
+#include \<graph.h>
+short _FAR _setactivepage( short pagenum );
+
+The  _setactivepage  function  selects	the  page (in memory) to which
+graphics output is written.    The page to be selected is given by the
+"pagenum" argument.
+
+Only  some  combinations  of video modes and hardware  allow  multiple
+pages of graphics to exist.   When  multiple  pages are supported, the
+active page may differ from the visual page.  The graphics information
+in the visual  page  determines  what is  displayed  upon the  screen.
+Animation  may be  accomplished  by  alternating  the visual page.   A
+graphics  page	can be	constructed  without  affecting  the screen by
+setting the active page to be different than the visual page.
+
+The number of  available  video  pages can be  determined by using the
+_getvideoconfig function.  The default video page is 0.
+::::_SETBKCOLOR
+#include \<graph.h>
+long _FAR _setbkcolor( long color );
+
+The  _setbkcolor function sets the current background color to be that
+of the "color" argument.  In text modes, the background color controls
+the area behind each  individual  character.   In graphics  modes, the
+background refers to the entire screen.   The default background color
+is 0.
+
+When the current video mode is a graphics mode, any pixels with a zero
+pixel  value will  change to the color of the "color" argument.   When
+the  current  video  mode  is a text mode,  nothing  will  immediately
+change; only subsequent output is affected.
+::::_SETCHARSIZE
+#include \<graph.h>
+void _FAR _setcharsize( short height, short width );
+
+void _FAR _setcharsize_w( double height, double width );
+
+The  _setcharsize  functions set the character height and width to the
+values	specified  by the  arguments  "height"	and  "width".  For the
+_setcharsize  function, the arguments "height" and "width" represent a
+number	of  pixels.   For the  _setcharsize_w  function, the arguments
+"height" and "width"  represent lengths along the y-axis and x-axis in
+the window coordinate system.
+
+These sizes are used when  displaying  text with the _grtext function.
+The  default  character  sizes	are  dependent	on the	graphics  mode
+selected, and can be determined by the _gettextsettings function.
+::::_SETCHARSPACING
+#include \<graph.h>
+void _FAR _setcharspacing( short space );
+
+void _FAR _setcharspacing_w( double space );
+
+The  _setcharspacing  functions set the current  character  spacing to
+have  the  value  of the  argument  "space".  For the  _setcharspacing
+function,   "space"   represents   a   number  of  pixels.    For  the
+_setcharspacing_w  function,  "space"  represents  a length  along the
+x-axis in the window coordinate system.
+
+The character  spacing specifies the additional space to leave between
+characters  when a text string is displayed with the _grtext function.
+A negative  value can be specified to cause the characters to be drawn
+closer together.  The default value of the character spacing is 0.
+::::_SETCLIPRGN
+#include \<graph.h>
+void _FAR _setcliprgn( short x1, short y1,
+		       short x2, short y2 );
+
+The  _setcliprgn  function restricts the display of graphics output to
+the  clipping  region.	 This  region  is a rectangle  whose  opposite
+corners are established by the physical points (x1,y1) and (x2,y2).
+
+The  _setcliprgn  function  does  not  affect  text  output  using the
+_outtext  and  _outmem	functions.   To  control  the location of text
+output, see the _settextwindow function.
+::::_SETCOLOR
+#include \<graph.h>
+short _FAR _setcolor( short pixval );
+
+The  _setcolor	function sets the pixel value for the current color to
+be that indicated by the "pixval" argument.  The current color is only
+used by the  functions	that produce graphics output; text output with
+_outtext uses the current text color (see the _settextcolor function).
+The  default color value is one less than the maximum number of colors
+in the current video mode.
+::::_SETFILLMASK
+#include \<graph.h>
+void _FAR _setfillmask( char _FAR *mask );
+
+The  _setfillmask  function sets the current fill mask to the value of
+the  argument  "mask".	When the value of the "mask" argument is NULL,
+there will be no fill mask set.
+
+The fill mask is an  eight-byte array which is interpreted as a square
+pattern  (8 by 8) of 64 bits.	Each bit in the mask  corresponds to a
+pixel.	 When a  region is filled,  each point in the region is mapped
+onto the fill mask.   When a bit from the mask is one, the pixel value
+of the	corresponding  point is set using the current  plotting action
+with the  current color; when the bit is zero, the pixel value of that
+point is not affected.
+
+When the fill mask is not set, a fill operation will set all points in
+the  fill  region  to have a pixel  value of the  current  color.   By
+default, no fill mask is set.
+::::_SETLINESTYLE
+#include \<graph.h>
+void _FAR _setlinestyle( unsigned short style );
+
+The  _setlinestyle  function sets the current  line-style  mask to the
+value of the "style" argument.
+
+The  line-style  mask determines the style by which lines and arcs are
+drawn.	 The  mask is  treated	as an array of 16 bits.   As a line is
+drawn,	a  pixel  at a time,  the bits in this	array  are  cyclically
+tested.  When a bit in the array is 1, the pixel value for the current
+point is set using the current color according to the current plotting
+action; otherwise, the pixel value for the point is left unchanged.  A
+solid line would result from a value of 0xFFFF and a dashed line would
+result from a value of 0xF0F0.
+
+The default line style mask is 0xFFFF.
+::::_SETPIXEL
+#include \<graph.h>
+short _FAR _setpixel( short x, short y );
+
+short _FAR _setpixel_w( double x, double y );
+
+The  _setpixel	function sets the pixel value of the point (x,y) using
+the current  plotting  action with the current	color.	 The _setpixel
+function uses the view	coordinate  system.   The _setpixel_w function
+uses the window coordinate system.
+
+A pixel value is associated with each point.   The values range from 0
+to the	number	of colors  (less one) that can be  represented	in the
+palette for the current video mode.   The color displayed at the point
+is the color in the  palette  corresponding to the pixel number.   For
+example,  a pixel value of 3 causes the fourth color in the palette to
+be displayed at the point in question.
+::::_SETPLOTACTION
+#include \<graph.h>
+short _FAR _setplotaction( short action );
+
+The  _setplotaction  function sets the current	plotting action to the
+value of the "action" argument.
+
+The drawing functions cause pixels to be set with a pixel value.    By
+default,  the value to be set is  obtained  by	replacing the original
+pixel  value  with the	supplied  pixel  value.    Alternatively,  the
+replaced  value may be	computed as a function of the original and the
+supplied pixel values.
+
+The plotting action can have one of the following values:
+
+_GPSET		    replace  the original  screen pixel value with the
+		    supplied pixel value
+
+_GAND		    replace  the original  screen pixel value with the
+		    bitwise  and of the  original  pixel value and the
+		    supplied pixel value
+
+_GOR		    replace  the original  screen pixel value with the
+		    bitwise  or of the	original  pixel  value and the
+		    supplied pixel value
+
+_GXOR		    replace  the original  screen pixel value with the
+		    bitwise  exclusive-or  of the original pixel value
+		    and  the supplied  pixel value.   Performing  this
+		    operation  twice will restore the original	screen
+		    contents, providing an efficient method to produce
+		    animated effects.
+::::_SETTEXTALIGN
+#include \<graph.h>
+void _FAR _settextalign( short horiz, short vert );
+
+The  _settextalign  function  sets  the current text  alignment to the
+values	specified  by the  arguments  "horiz" and "vert". When text is
+displayed  with  the  _grtext  function,  it  is  aligned  (justified)
+horizontally  and  vertically  about the given point  according to the
+current text alignment settings.
+
+The  horizontal  component  of	the  alignment	can  have  one	of the
+following values:
+
+_NORMAL 	    use  the  default  horizontal  alignment  for  the
+		    current setting of the text path
+
+_LEFT		    the  text  string is left  justified  at the given
+		    point
+
+_CENTER 	    the text string is centred	horizontally about the
+		    given point
+
+_RIGHT		    the text  string is right  justified  at the given
+		    point
+
+The  vertical component of the alignment can have one of the following
+values:
+
+_NORMAL 	    use the default vertical alignment for the current
+		    setting of the text path
+
+_TOP		    the top of the text string is aligned at the given
+		    point
+
+_CAP		    the cap line of the text  string is aligned at the
+		    given point
+
+_HALF		    the  text string is centred  vertically  about the
+		    given point
+
+_BASE		    the base line of the text string is aligned at the
+		    given point
+
+_BOTTOM 	    the  bottom  of the text  string is aligned at the
+		    given point
+
+The default is to use _LEFT  alignment	for the  horizontal  component
+unless the text path is  _PATH_LEFT, in which case _RIGHT alignment is
+used.  The default value for the vertical component is _TOP unless the
+text path is _PATH_UP, in which case _BOTTOM alignment is used.
+::::_SETTEXTCOLOR
+#include \<graph.h>
+short _FAR _settextcolor( short pixval );
+
+The _settextcolor function sets the current text color to be the color
+indicated  by the pixel  value of the "pixval" argument.   This is the
+color  value  used for	displaying  text with the _outtext and _outmem
+functions.  Use the _setcolor function to change the color of graphics
+output.  The default text color value is set to 7 whenever a new video
+mode is selected.
+
+The pixel value "pixval" is a number in the range 0-31.  Colors in the
+range 0-15 are displayed normally.  In text modes, blinking colors are
+specified  by adding 16 to the normal  color  values.	The  following
+table specifies the default colors in color text modes.
+
+    Pixel      Color	    Pixel      Color
+    value		    value
+
+      0       Black	      8       Gray
+      1       Blue	      9       Light Blue
+      2       Green	     10       Light Green
+      3       Cyan	     11       Light Cyan
+      4       Red	     12       Light Red
+      5       Magenta	     13       Light Magenta
+      6       Brown	     14       Yellow
+      7       White	     15       Bright White
+::::_SETTEXTCURSOR
+#include \<graph.h>
+short _FAR _settextcursor( short cursor );
+
+The  _settextcursor  function  sets  the  attribute,  or shape, of the
+cursor	in text  modes.   The  cursor  shape is set using the BIOS Set
+Cursor Size function.	The argument "cursor" specifies the new cursor
+shape.	 The cursor shape is selected by specifying the top and bottom
+rows in the character matrix.  The high byte of "cursor" specifies the
+top row of the cursor; the low byte specifies the bottom row.
+
+Some typical values for "cursor" are:
+
+    Cursor	    Shape
+
+    0x0607	    normal underline cursor
+    0x0007	    full block cursor
+    0x0407	    half-height block cursor
+    0x2000	    no cursor
+::::_SETTEXTORIENT
+#include \<graph.h>
+void _FAR _settextorient( short vecx, short vecy );
+
+The  _settextorient  function sets the current text orientation to the
+vector specified by the arguments (vecx,vecy).	  The text orientation
+specifies  the direction of the base-line vector when a text string is
+displayed  with the _grtext  function.	 The default text orientation,
+for normal left-to-right text, is the vector (1,0).
+::::_SETTEXTPATH
+#include \<graph.h>
+void _FAR _settextpath( short path );
+
+The _settextpath function sets the current text path to have the value
+of the "path" argument.  The text path specifies the writing direction
+of the text displayed by the _grtext function.	 The argument can have
+one of the following values:
+
+_PATH_RIGHT	    subsequent	characters  are  drawn to the right of
+		    the previous character
+
+_PATH_LEFT	    subsequent characters are drawn to the left of the
+		    previous character
+
+_PATH_UP	    subsequent characters are drawn above the previous
+		    character
+
+_PATH_DOWN	    subsequent characters are drawn below the previous
+		    character
+
+The default value of the text path is _PATH_RIGHT.
+::::_SETTEXTPOSITION
+#include \<graph.h>
+struct rccoord _FAR _settextposition( short row,
+				      short col );
+
+The  _settextposition  function  sets the current output  position for
+text to be  (row,col)  where this  position is in terms of characters,
+not pixels.
+
+The text position is relative to the current text window.  It defaults
+to the top left  corner of the screen, (1,1), when a new video mode is
+selected, or when a new text window is set.    The position is updated
+as text is drawn with the _outtext and _outmem functions.
+
+Note that the output  position for graphics  output  differs from that
+for text output.    The output position for graphics output can be set
+by use of the _moveto function.
+::::_SETTEXTROWS
+#include \<graph.h>
+short _FAR _settextrows( short rows );
+
+The _settextrows function selects the number of rows of text displayed
+on the	screen.   The  number  of rows is  specified  by the  argument
+"rows". Computers equipped with EGA, MCGA and VGA adapters can support
+different  numbers  of	text  rows.   The  number  of rows that can be
+selected  depends  on the  current  video mode and the type of monitor
+attached.
+
+If the	argument  "rows"  has  the value  "_MAXTEXTROWS,"  the maximum
+number of text rows will be  selected  for the	current video mode and
+hardware configuration.    In text modes the maximum number of rows is
+43 for EGA adapters, and 50 for MCGA and VGA adapters.	 Some graphics
+modes  will  support 43 rows for EGA adapters and 60 rows for MCGA and
+VGA adapters.
+::::_SETTEXTWINDOW
+#include \<graph.h>
+void _FAR _settextwindow( short row1, short col1,
+			  short row2, short col2 );
+
+The  _settextwindow  function sets the text window to be the rectangle
+with a top left  corner at  (row1,col1)  and a bottom  right corner at
+(row2,col2).  These coordinates are in terms of characters not pixels.
+
+The initial text output position is (1,1).   Subsequent text positions
+are  reported  (by  the  _gettextposition  function)  and  set (by the
+_outtext,  _outmem and	_settextposition  functions)  relative to this
+rectangle.
+
+Text is displayed from the current output position for text proceeding
+along the  current  row and then downwards.   When the window is full,
+the lines  scroll  upwards  one line and then text is displayed on the
+last line of the window.
+::::_SETVIDEOMODE
+#include \<graph.h>
+short _FAR _setvideomode( short mode );
+
+The  _setvideomode function sets the video mode according to the value
+of  the  "mode"  argument.    The  value of  "mode"  can be one of the
+following:
+
+   Mode 	  Type	  Size	  Colors  Adapter
+
+   _MAXRESMODE	 (graphics mode with highest resolution)
+   _MAXCOLORMODE (graphics mode with most colors)
+   _DEFAULTMODE  (restores screen to original mode)
+   _TEXTBW40	  M,T	 40 x 25    16	  MDPA,HGC,VGA
+   _TEXTC40	  C,T	 40 x 25    16	  CGA,EGA,MCGA,VGA
+   _TEXTBW80	  M,T	 80 x 25    16	  MDPA,HGC,VGA
+   _TEXTC80	  C,T	 80 x 25    16	  CGA,EGA,MCGA,VGA
+   _MRES4COLOR	  C,G	320 x 200    4	  CGA,EGA,MCGA,VGA
+   _MRESNOCOLOR   C,G	320 x 200    4	  CGA,EGA,MCGA,VGA
+   _HRESBW	  C,G	640 x 200    2	  CGA,EGA,MCGA,VGA
+   _TEXTMONO	  M,T	 80 x 25    16	  MDPA,HGC,VGA
+   _HERCMONO	  M,G	720 x 350    2	  HGC
+   _MRES16COLOR   C,G	320 x 200   16	  EGA,VGA
+   _HRES16COLOR   C,G	640 x 200   16	  EGA,VGA
+   _ERESNOCOLOR   M,G	640 x 350    4	  EGA,VGA
+   _ERESCOLOR	  C,G	640 x 350  4/16   EGA,VGA
+   _VRES2COLOR	  C,G	640 x 480    2	  MCGA,VGA
+   _VRES16COLOR   C,G	640 x 480   16	  VGA
+   _MRES256COLOR  C,G	320 x 200  256	  MCGA,VGA
+   _URES256COLOR  C,G	640 x 400  256	  SVGA
+   _VRES256COLOR  C,G	640 x 480  256	  SVGA
+   _SVRES16COLOR  C,G	800 x 600   16	  SVGA
+   _SVRES256COLOR C,G	800 x 600  256	  SVGA
+   _XRES16COLOR   C,G  1024 x 768   16	  SVGA
+   _XRES256COLOR  C,G  1024 x 768  256	  SVGA
+
+In the	preceding  table,  the	Type  column  contains	the  following
+letters:
+
+M	  indicates monochrome; multiple colors are shades of grey
+
+C	  indicates color
+
+G	  indicates graphics mode; size is in pixels
+
+T	  indicates  text  mode;  size	is  in	columns  and  rows  of
+	  characters
+
+The Adapter column contains the following codes:
+
+MDPA	  IBM Monochrome Display/Printer Adapter
+
+CGA	  IBM Color Graphics Adapter
+
+EGA	  IBM Enhanced Graphics Adapter
+
+VGA	  IBM Video Graphics Array
+
+MCGA	  IBM Multi-Color Graphics Array
+
+HGC	  Hercules Graphics Adapter
+
+SVGA	  SuperVGA adapters
+
+The mode  selected  must be  supported	by the hardware present on the
+computer.
+
+Selecting  a new video mode resets the current	output	positions  for
+graphics  and  text  to be the top left  corner  of the  screen.   The
+background  color is reset to black and the default color value is set
+to be one less than the number of colors in the selected mode.
+::::_SETVIDEOMODEROWS
+#include \<graph.h>
+short _FAR _setvideomoderows( short mode, short rows );
+
+The  _setvideomoderows function selects a video mode and the number of
+rows of text displayed on the screen.	The video mode is specified by
+the argument  "mode" and is selected  with the _setvideomode function.
+The number of rows is specified by the argument "rows" and is selected
+with the _settextrows function.
+
+Computers  equipped  with  EGA,  MCGA  and  VGA  adapters  can support
+different  numbers  of	text  rows.   The  number  of rows that can be
+selected depends on the video mode and the type of monitor attached.
+::::_SETVIEWORG
+#include \<graph.h>
+struct xycoord _FAR _setvieworg( short x, short y );
+
+The  _setvieworg  function  sets  the  origin  of the view  coordinate
+system, (0,0), to be located at the physical point (x,y).  This causes
+subsequently drawn images to be translated by the amount (x,y).
+
+Note:	In previous versions of the software, the _setvieworg function
+was called _setlogorg.
+::::_SETVIEWPORT
+#include \<graph.h>
+void _FAR _setviewport( short x1, short y1,
+			short x2, short y2 );
+
+The  _setviewport function restricts the display of graphics output to
+the  clipping  region and then sets the origin of the view  coordinate
+system	to be the top left  corner  of the  region.   This region is a
+rectangle  whose  opposite  corners  are  established  by the physical
+points (x1,y1) and (x2,y2).
+
+The  _setviewport  function  does  not	affect	text  output using the
+_outtext  and  _outmem	functions.   To  control  the location of text
+output, see the _settextwindow function.
+::::_SETVISUALPAGE
+#include \<graph.h>
+short _FAR _setvisualpage( short pagenum );
+
+The  _setvisualpage  function  selects the page (in memory) from which
+graphics output is displayed.  The page to be selected is given by the
+"pagenum" argument.
+
+Only  some  combinations  of video modes and hardware  allow  multiple
+pages of graphics to exist.   When  multiple  pages are supported, the
+active page may differ from the visual page.  The graphics information
+in the visual  page  determines  what is  displayed  upon the  screen.
+Animation  may be  accomplished  by  alternating  the visual page.   A
+graphics  page	can be	constructed  without  affecting  the screen by
+setting the active page to be different than the visual page.
+
+The number of  available  video  pages can be  determined by using the
+_getvideoconfig function.  The default video page is 0.
+::::_SETWINDOW
+#include \<graph.h>
+short _FAR _setwindow( short invert,
+		       double x1, double y1,
+		       double x2, double y2 );
+
+The  _setwindow  function  defines a window for the window  coordinate
+system.    Window coordinates are specified as a user-defined range of
+values.    This allows for consistent pictures regardless of the video
+mode.
+
+The window is defined as the region with  opposite corners established
+by the points  (x1,y1) and (x2,y2).   The argument  "invert" specifies
+the direction of the y-axis.	If the value is non-zero, the y values
+increase  from the bottom of the screen to the top,  otherwise,  the y
+values increase as you move down the screen.
+
+The  window  defined  by the  _setwindow  function is displayed in the
+current viewport.  A viewport is defined by the _setviewport function.
+
+By  default,  the window  coordinate  system is defined with the point
+(0.0,0.0)  located  at the lower left  corner of the  screen,  and the
+point (1.0,1.0) at the upper right corner.
+::::_WRAPON
+#include \<graph.h>
+short _FAR _wrapon( short wrap );
+
+The  _wrapon  function is used to control the display of text when the
+text output reaches the right side of the text window.	  This is text
+displayed  with  the  _outtext	and  _outmem  functions.    The "wrap"
+argument can take one of the following values:
+
+_GWRAPON	    causes lines to wrap at the window border
+
+_GWRAPOFF	    causes lines to be truncated at the window border
+::::GRAPHICS
+			  Graphics Functions
+			  様様様様様様様様様
+
+The graphics functions are used to display graphical images such as
+lines and circles upon the screen.  Text can also be displayed with
+the graphics output.  Support is provided for both color and
+monochrome screens which are connected to the computer using any of
+the following graphics adapters:
+
+	IBM Monochrome Display/Printer Adapter (MDPA)
+	IBM Color Graphics Adapter (CGA)
+	IBM Enhanced Graphics Adapter (EGA)
+	IBM Multi-Color Graphics Array (MCGA)
+	IBM Video Graphics Array (VGA)
+	Hercules Monochrome Adapter
+	SuperVGA adapters (SVGA) supplied by various manufacturers
+
+The graphics functions are:
+
+<_arc>			draws an elliptical arc
+<_clearscreen>		clears the indicated "area" and fills it
+<_displaycursor>	specifies whether the cursor is displayed
+<_ellipse>		draws an ellipse
+<_floodfill>		fills an area of the screen
+<_getactivepage>	returns the active graphics page
+<_getarcinfo>		returns the endpoints of the most recent arc
+<_getbkcolor>		returns the current background color
+<_getcliprgn>		returns the boundary of the clipping region
+<_getcolor>		returns the pixel value for the current color
+<_getcurrentposition>	returns the current output position
+<_getfillmask>		returns the current fill mask
+<_getimage>		places screen image into memory
+<_getlinestyle> 	returns the current line-style mask
+<_getphyscoord> 	returns physical coordinates
+<_getpixel>		returns the pixel value for a point
+<_getplotaction>	returns the current plotting action
+<_gettextcolor> 	returns pixel value of the current text color
+<_gettextcursor>	returns the shape of the text cursor
+<_gettextextent>	simulates the effect of using _grtext function
+<_gettextposition>	returns the current output position for text
+<_gettextsettings>	returns the current text settings
+<_gettextwindow>	returns the boundary of the text window
+<_getvideoconfig>	returns the current video environment
+<_getviewcoord> 	returns the view coordinates of a point
+<_getvisualpage>	returns the visual graphics page
+<_getwindowcoord>	returns the window coordinates of a point
+<_grstatus>		returns the status of the last function
+<_grtext>		displays a character string
+<_imagesize>		computes number of bytes required for an image
+<_lineto>		draws a straight line
+<_moveto>		sets the current output position
+<_outmem>		displays a text string of a specified length
+<_outtext>		displays a text string
+<_pie>			draws a pie-shaped wedge
+<_polygon>		draws a polygon
+<_putimage>		displays an image from memory on the screen
+<_rectangle>		draws a rectangle
+<_remapallpalette>	sets (or remaps) all the colors in a palette
+<_remappalette> 	sets (or remaps) a palette color
+<_scrolltextwindow>	scrolls the contents of the text window
+<_selectpalette>	selects a palette
+<_setactivepage>	selects the active graphics page
+<_setbkcolor>		sets the current background color
+<_setcharsize>		sets the character height and width
+<_setcharspacing>	sets the current character spacing
+<_setcliprgn>		restricts the display of graphics output
+<_setcolor>		sets the pixel value for the current color
+<_setfillmask>		sets the current fill mask
+<_setlinestyle> 	sets the current line-style mask
+<_setpixel>		sets the pixel value of a point
+<_setplotaction>	sets the current plotting action
+<_settextalign> 	sets the current text alignment
+<_settextcolor> 	sets the current text color
+<_settextcursor>	sets the shape of the text cursor
+<_settextorient>	sets the current text orientation
+<_settextpath>		sets the current text path
+<_settextposition>	sets the current output position for text
+<_settextrows>		sets the number of screen rows
+<_settextwindow>	sets the text window
+<_setvideomode> 	sets the video mode
+<_setvideomoderows>	sets the video mode and number of screen rows
+<_setvieworg>		sets the origin of the view coordinate system
+<_setviewport>		restricts the display of graphics output
+<_setvisualpage>	selects the visual graphics page
+<_setwindow>		sets the range of the window coordinates
+<_wrapon>		controls text wrapping at edge of window

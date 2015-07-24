@@ -1,0 +1,245 @@
+%!PS-Adobe-1.0
+%%Creator: Robin Walsh, Jim Randall, Gary Pianosi, and Jim Welch
+%%CreationDate: March, 1988 .. May 1990
+%%Title:InfoBench POSTSCRIPT DICTIONARY
+%%===========================================================
+%%Modified:     By:             Reason:
+%% 19 Jul 89    Gary Pianosi    change FontRatio from 10/12 to 1 to
+%%                              fix flattened 'o's
+%%  6 Jan 90    Gary Pianosi    lower superscripts; raise subscripts
+%%                              so that they don't collide
+%%  7 Jan 90    Gary Pianosi    defined procedure SetupPage to set up
+%%                              page based on # lines and width in chars
+%%  7 Mar 90    Jim Welch       modified SetupPage to take page dimensions
+%%                              and to not print within unprintable border
+%%  8 Feb 90    Gary Pianosi    added graphhead procedure
+%% 26 Mar 90    Gary Pianosi    revised graphhead procedure (no clipping)
+%%  2 May 90    Jim Welch       Add Foreign characters to fonts
+
+%%.......PROCEDURE SECTION
+%%========================
+
+/StartPage {
+    72 1000 div dup scale
+    PageLeft PageTop moveto
+    /TopInitialize false def
+}def
+
+/column {
+    xfactor mul             % for calculating columns on the page.
+}def
+
+/choosefont {                   % sets font---stack:  typeface
+    findfont FontMatrix makefont setfont
+}def
+
+/newline {
+    TopInitialize { StartPage } if
+    PageLeft currentpoint exch pop Leading sub moveto
+}def
+
+/position {                     % stack: column #
+    TopInitialize { StartPage } if
+    currentpoint exch pop exch column PageLeft add exch moveto
+}def
+
+/page {
+    TopInitialize { StartPage } if
+    showpage
+    /TopInitialize true def
+}def
+
+
+%% PRINTING PROCEDURES          [note : string must be on the stack]
+%%====================
+
+/graphhead {
+   % This procedure was taken from the WGML output for the :GRAPHIC. tag.
+   % And modified to take parms in char/line units instead of 1/1000".
+   % Also, do not clip graphic.
+   %    Usage:      [depth] [xoff] [yoff] [scale] graphhead
+   %    Stack:      scale       - expressed as a percentage
+   %                y-offset    - in lines (positive down)
+   %                x-offset    - in chars (positive right)
+   %                depth       - in lines
+   /@scale exch def                             % get parms off the stack
+   /@yoff exch Leading mul def                  % ... convert from lines
+   /@xoff exch xfactor mul def                  % ... convert from chars
+   /@depth exch Leading mul def                 % ... convert from lines
+   currentpoint Leading add                     % get coords of top left corner
+   /@y exch def /@x exch def                    % ... (move up to top of char)
+   1 setlinewidth /@clw currentlinewidth def    % set line width for 'stroke'
+   @x @xoff add dup @y @yoff sub moveto         % move to (x+xoff,y-yoff)
+   @y @yoff sub @depth sub translate            % xlate (x+xoff,y-yoff-depth)
+   10 @scale mul 72 div dup scale
+}def
+
+/normal
+    {/Courier-Ib choosefont show} def
+/italics
+    {/Courier-Oblique-Ib choosefont show} def
+/light
+    {/Courier-Ib choosefont .4 setgray show 0 setgray} def
+/bold
+    {/Courier-Bold-Ib choosefont show} def
+/bolditalics
+    {/Courier-BoldOblique-Ib choosefont show} def
+/compress
+    {/Courier-Ib findfont
+     [.5 xscale mul 0 0 yscale 0 0] makefont setfont show} def
+/double
+    {/Courier-Ib findfont
+     [2 xscale mul 0 0 2 yscale mul 0 0] makefont setfont show} def
+/expand
+    {/Courier-Ib findfont
+     [2 xscale mul 0 0 yscale 0 0] makefont setfont show} def
+/subscript
+    {/Courier-Ib findfont
+     [xscale 0 0 .5 yscale mul 0 0] makefont setfont
+     0 yscale 10 div neg rmoveto show 0 yscale 10 div rmoveto} def
+/superscript
+    {/Courier-Ib findfont
+     [xscale 0 0 .5 yscale mul 0 0] makefont setfont
+     0 yscale 3 div rmoveto show 0 yscale 3 div neg rmoveto} def
+/uline
+  %
+  % Emit the appropriate number of underscore characters.  Restore the
+  % current point after doing so.
+  %
+  {
+    choosefont
+    gsave
+    dup length
+    { (_) show } repeat
+    grestore
+    show
+  } def
+
+/underline
+    {/Courier-Ib uline} def
+/boldunderline
+    {/Courier-Bold-Ib uline} def
+
+/IbChars[               % These characters are added to the Courier fonts.
+ 8#200 /Ccedilla        % - they are encoded at positions normally found
+ 8#201 /udieresis       %   in Code Page 437 (United States)
+ 8#202 /eacute
+ 8#203 /acircumflex
+ 8#204 /adieresis
+ 8#205 /agrave
+ 8#206 /aring
+ 8#207 /ccedilla
+ 8#210 /ecircumflex
+ 8#211 /edieresis
+ 8#212 /egrave
+ 8#213 /idieresis
+ 8#214 /icircumflex
+ 8#215 /igrave
+ 8#216 /Adieresis
+ 8#217 /Aring
+ 8#220 /Eacute
+ 8#221 /ae
+ 8#222 /AE
+ 8#223 /ocircumflex
+ 8#224 /ograve
+ 8#225 /odieresis
+ 8#226 /ucircumflex
+ 8#227 /uacute
+ 8#230 /ydieresis
+ 8#231 /Odieresis
+ 8#232 /Udieresis
+ 8#233 /cent
+ 8#234 /sterling
+ 8#235 /yen
+ 8#237 /florin
+ 8#240 /aacute
+ 8#241 /iacute
+ 8#242 /oacute
+ 8#243 /uacute
+ 8#244 /ntilde
+ 8#245 /Ntilde
+ 8#246 /ordfeminine
+ 8#247 /ordmasculine
+ 8#250 /questiondown
+ 8#255 /exclamdown
+ 8#256 /guillemotleft
+ 8#257 /guillemotright
+ 8#355 /oslash
+ 8#371 /periodcentered
+ 8#372 /bullet
+]def
+
+/reencsmalldict 12 dict def
+/SetIbFont
+    %
+    % Add characters to a font
+    %
+{   reencsmalldict begin
+        /newcodesandnames exch def
+        /newfontname exch def
+        /basefontname exch def
+        /basefontdict basefontname findfont def
+        /newfont 256 dict def
+        basefontdict
+        {   exch dup /FID ne
+            {   dup /Encoding eq
+                {   exch dup length array copy
+                    newfont 3 1 roll put
+                }
+                {   exch newfont 3 1 roll put
+                }
+                ifelse
+            }
+            {   pop
+                pop
+            }
+            ifelse
+        }
+        forall
+        newfont /FontName newfontname put
+%       128 1 255 { newfont exch /.notdef put } for
+        newcodesandnames aload pop
+        newcodesandnames length 2 idiv
+        { newfont /Encoding get 3 1 roll put } repeat
+        newfontname newfont definefont pop
+        end
+} def
+
+/SetupPage {
+    %
+    % Set up the character scaling factors to get the desired number
+    % of lines (length) and characters (width) on a 8.5 x 11 page.
+    %
+    % Parms: page length (inches)
+    %        page width  (inches)
+    %        page length (# of lines)
+    %        page width  (# characters)
+    %
+    /WidthChars   exch def
+    /LengthLines  exch def
+    /WidthofPage  exch def
+    /LengthofPage exch def
+    /PageLength LengthofPage 1000 mul OffsetTop   sub OffsetBot  sub def
+    /PageWidth  WidthofPage  1000 mul OffsetRight sub OffsetLeft sub def
+    /FontRatio  1 def
+    /xfactor PageWidth WidthChars div def
+    /Leading PageLength LengthLines div def
+    /xscale xfactor 5 mul 3 div def
+    /yscale Leading FontRatio mul def
+    /FontMatrix [xscale 0 0 yscale 0 0] def
+    /PageLeft OffsetLeft def
+    /PageTop PageLength OffsetBot add Leading sub def
+    /TopInitialize true def
+    /Courier             /Courier-Ib             IbChars SetIbFont
+    /Courier-Bold        /Courier-Bold-Ib        IbChars SetIbFont
+    /Courier-Oblique     /Courier-Oblique-Ib     IbChars SetIbFont
+    /Courier-BoldOblique /Courier-BoldOblique-Ib IbChars SetIbFont
+}def
+
+%%......STARTUP: use 8.5 x 11 page with 66 lines by 80 columns
+%%=============
+
+/OffsetTop 200 def          % unprintable border
+/OffsetBot 200 def
+/OffsetLeft 200 def
+/OffsetRight 300 def

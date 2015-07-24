@@ -1,0 +1,17 @@
+* Syntax:	asm
+*
+* Synopsis:	Creates a small source window and a large assembly window.
+*		The dialogue and register windows are placed on the screen.
+*
+/_dbg@dbg$src_top = _dbg@dbg$top
+/_dbg@dbg$src_bot = _dbg@dbg$src_top + _dbg@dbg$tiny
+/_dbg@dbg$asm_top = _dbg@dbg$src_bot + 1
+/_dbg@dbg$asm_bot = _dbg@dbg$bot
+/_dbg@dbg$wind_split = 1
+do _dbg@dbg$rgt = _dbg@dbg$right-8-5*_dbg@dbg$32
+display source	 {Source:   *} _dbg@dbg$src_top, _dbg@dbg$src_bot, _dbg@dbg$left, _dbg@dbg$rgt-1
+display assembly {Assembly: *} _dbg@dbg$asm_top, _dbg@dbg$asm_bot, _dbg@dbg$left, _dbg@dbg$rgt-1
+display dialogue {Dialogue: *} _dbg@dbg$bot+1, _dbg@dbg$bottom-1, _dbg@dbg$left, _dbg@dbg$right
+display register {CPU} _dbg@dbg$top, _dbg@dbg$top+19, _dbg@dbg$rgt, _dbg@dbg$right
+display stack /close {Stack} _dbg@dbg$top, _dbg@dbg$top+19, _dbg@dbg$rgt-7-3*_dbg@dbg$32, _dbg@dbg$rgt-1
+set level assembly

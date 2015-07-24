@@ -1,0 +1,12 @@
+/*
+ *  common.cnv	Common calling conventions used by other compilers.
+ *		This file should be included when creating an object file
+ *		with 'wcc' to be used by "WATCOM Express C"
+ *		This can be done with the /f command line switch
+ *			wcc filename /fcommon.cnv
+ *
+ *  Copyright (C) by WATCOM Systems Inc. 1988-1991.  All rights reserved.
+ */
+#pragma aux default "_*" parm caller [] 			  \
+			 value struct float struct routine [ax]   \
+			 modify [ax bx cx dx es];

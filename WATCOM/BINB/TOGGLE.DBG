@@ -1,0 +1,10 @@
+* Syntax:       toggle <pfkey_number> <command_string_1> <command_string_2>
+*
+* Synopsis:     Set up a PF key to alternate between two commands.
+*
+* Example:      toggle 10 {set menu on} {set menu off}
+*
+set pf <1> {
+    if !?_dbg@pf_<1> {/_dbg@pf_<1>=0};
+    if (++_dbg@pf_<1>)&1 {<2>} {<3>}
+}

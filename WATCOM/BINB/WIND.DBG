@@ -1,0 +1,5 @@
+* Syntax:       wind
+*
+* Synopsis:     runs src, asm, or mix.dbg as required.
+*
+if _dbg@dbg$wind_split%3==0 {<src} {if _dbg@dbg$wind_split%3==1 {<asm} {<mix}}

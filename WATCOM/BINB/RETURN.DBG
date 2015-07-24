@@ -1,0 +1,10 @@
+* Syntax:	return
+*
+* Synopsis:	Return from current function
+*
+* Example:	return
+*
+while( ( ( *(char *)_dbg@dbg$ip ) & 0xf6 ) != 0xc2 ) {
+    t/a/o
+}
+t/a/o

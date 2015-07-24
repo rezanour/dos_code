@@ -1,0 +1,9 @@
+* Syntax:       vr <routine_name>
+*
+* Synopsis:     Examine the source code for a given routine using the "view"
+*               command.
+*
+* Example:      vr main
+*
+e/a <1>,0
+view

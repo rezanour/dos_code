@@ -1,0 +1,180 @@
+                Read Me for WATCOM C8.5/386
+                ===========================
+		
+Several major items have been added to WATCOM C 386. They are:
+1) A royalty-free 32-bit DOS-extender.
+2) Protected-mode version of the linker.  (WLINKP.EXE)
+3) OS/2 hosted version of WCL386 and WCC386.
+4) The protected-mode compiler and linker can now be run in a
+   Windows 3.0 DOS box.
+
+           Additions to the WATCOM Linker (WLINK)
+           ======================================
+
+1. The "LIBFILE" directive has been added to the linker.  The form of the
+   "LIBFILE" directive (short form "LIBF") is as follows.
+   
+       LIBFILE file{,file}
+       
+   When trying to locate an object file that was specified in a "LIBFILE"
+   directive, the paths specified in the "LIBPATH" directive and the "LIBxxx"
+   environment variables will be searched.  Note that object files specified
+   in a "LIBFILE" directive will not be used to create the name of the
+   executable file if no "NAME" directive has been specified.
+   
+2. The "LIBPATH" directive has been added to the linker.  The form of the
+   "LIBPATH" directive (short form "LIBP") is as follows.
+   
+       LIBPATH path{;path}
+       
+   When trying to locate a library file that was specified in a "LIBRARY"
+   directive, the paths specified in the "LIBPATH" directive and the "LIBxxx"
+   environment variables will be searched.  These directories will not be
+   searched if the library file already contains a path specification.
+    Note that
+   
+       LIBPATH path1
+       LIBPATH path2
+
+   is equivalent to
+   
+       LIBPATH path2;path1
+       
+3. The "SYSTEM" directive has been added to the linker.  There are two forms
+   of this directive.  The first form of the "SYSTEM" directive (short form
+   "SYS") is as follows.
+
+       SYSTEM BEGIN <system_name>
+           <linker_directives>
+       END
+
+   This form of the "SYSTEM" directive allows you to associate a set of
+   linker directives with a user-specified name called the system name.
+   For example,
+   
+       SYSTEM BEGIN DOS
+           FORMAT DOS
+           LIBPATH c:\watcom\lib286\dos;c:\watcom\lib286
+       END
+       
+   defines a system called "DOS" which specifies the format of the executable
+   file and the directories to be searched when trying to locate library files.
+   
+   A restricted set of linker directives is allowed in a system definition.
+   They are:
+
+       LIBFILE
+       LIBPATH
+       LIBRARY
+       NAME
+       OPTION
+       RUNTIME (only with "FORMAT PHARLAP")
+       SEGMENT (only with "FORMAT OS2" or "FORMAT QNX")
+    
+   The second form of the "SYSTEM" directive is as follows.
+   
+       SYSTEM <system_name>
+       
+   When this form of the "SYSTEM" directive is encountered, all directives
+   specified in the <system_name> system will be processed.
+   
+4. The WATCOM linker will now process all directives found in the file
+   "WLINK.LNK".  The file "WLINK.LNK" must appear somewhere in your path in
+   order for the linker to locate this file.  A default "WLINK.LNK" is
+   placed in the "C:\WATCOM\BINB" directory by the installation procedure.
+   
+5. You may now reference DOS environment variables from your linker directive
+   file.  For example, if the "WATCOM" environment variable is defined as
+   follows,
+   
+       C>SET WATCOM=C:\WATCOM
+       
+   then the linker directive
+   
+       LIBPATH %WATCOM%\LIB286
+   
+   is equivalent to the following linker directive.
+   
+       LIBPATH C:\WATCOM\LIB286
+
+   Note that a space must precede a reference to a DOS environment variable.
+   
+6. The "^" symbol can be used to pass information to a linker directive file
+   invoked by the "@" directive or to a system definition block invoked by
+   a "SYSTEM" directive.  This includes directive files or system blocks
+   invoked from other directive files and/or system blocks.  For example,
+   if we invoked the linker as follows
+   
+       C>WLINK @TEST MAP, CASEEXACT
+       
+   and the contents of the linker directive file "TEST.LNK" was as follows,
+   
+       FILE TEST
+       OPTION ^
+       
+   then the "MAP, CASEEXACT" portion of the command line would be processed
+   as part of the "OPTION" directive that appeared in the directive file.
+   Note that only linker options from the command line will be processed when
+   the "OPTION" directive is encountered.  For example, if the linker was
+   invoked as follows
+   
+       C>WLINK @TEST MAP, CASEEXACT LIBRARY TESTLIB
+       
+   and the contents of the linker directive file "TEST.LNK" was as follows,
+   
+       FILE TEST
+       OPTION ^
+       NAME MYTEST
+       
+   the "MAP, CASEEXACT" portion of the command line will be processed as
+   part of the "OPTION" directive, the "NAME" directive will then be
+   processed, and finally the "LIBRARY" directive specified on the command
+   line will be processed.
+
+7. The "OS2" format has been extended to include OS/2 linear executable files.
+   The new format of the OS/2 "FORMAT" directive is as follows.
+
+       FORMAT OS2 [FLAT] [DLL [INITGLOBAL | INITINSTANCE]]
+       
+   An OS/2 linear executable file will automatically be generated if
+   "FORMAT OS2" has been specified and a 32-bit object file has been
+   encountered.
+   
+           Additions to the WATCOM Librarian (WLIB)
+           ========================================
+
+1. The following options have been added the WATCOM Library Manager.
+
+       /q       operate quietly
+
+       /s       strip line number records from object files
+
+       /t       remove path information from module name specified in
+                THEADR records
+
+       /x       explode library - extract all object modules from library
+
+       /d       default directory in which extracted object modules will
+                be placed
+
+       /i[r|n][o|n]
+
+           /iro imports for the resident names table are to be imported by
+                ordinal
+
+           /irn imports for the resident names table are to be imported by
+                name
+
+           /ino imports for the non-resident names table are to be imported by
+                ordinal
+
+           /inn imports for the non-resident names table are to be imported by
+                name
+
+           default is "irn" and "ino"
+
+        ++sym.module.[ord|export]
+                create an import library entry for <sym> which states that it
+                comes from DLL <module> with ordinal <ord> or name <export>
+
+        *module now allows a path specifier

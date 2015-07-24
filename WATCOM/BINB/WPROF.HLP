@@ -1,0 +1,828 @@
+		  WATCOM Execution Profiler Help File
+		  อออออออออออออออออออออออออออออออออออ
+
+**********************************************************************
+* Copyright by WATCOM Systems Inc. 1988, 1990.	All rights reserved. *
+* No part of this publication may be reproduced in any form or by    *
+* by any means - graphic, electronic or mechanical, including	     *
+* photocopying, recording, taping or information storage and	     *
+* retrieval systems - except for its intended use with WATCOM C	     *
+* or WATCOM Express C.						     *
+**********************************************************************
+
+All help topics must be stored in order of the ASCII collating
+sequence.  Each topic is identified by a header consisting of a
+string of four colons followed by the topic name.  Any alphabetic
+characters must be entered in upper-case.
+
+(ordering is based on stricmp() C run-time function which is operates
+ identically to:
+	stricmp( s1, s2 ) == strcmp( strlwr( s1 ), strlwr( s2 ) )
+::::ABOUT
+		     The WATCOM Execution Profiler
+		     อออออออออออออออออออออออออออออ
+ 
+	       WATCOM Execution Profiler Version 1.2
+Copyright by WATCOM Systems Inc. 1989, 1990. All rights reserved.
+WATCOM is a trademark of WATCOM Systems Inc.
+
+Technical Support:  phone:  (519) 886-3700
+		    FAX:    (519) 747-4971
+		    BBS:    (519) 884-2103 (8 bits/1 stop/no parity)
+
+See also: <MAIN_HELP>
+::::ABSOLUTE
+			 Absolute Measurements
+			 อออออออออออออออออออออ
+
+Absolute measurements are a result of using the total number of
+measurements for the entire execution of the program.  As such,
+these measurements reflect the total contribution of a region to
+the execution of the program.  Absolute measurements remain the
+same regardless of any adjustments to the visible region.
+
+See also: <RELATIVE> <OPTION_HISTOGRAM_TYPE> <OPTION_PERCENTAGE_TYPE>
+::::BACKOUT
+				Backout
+				อออออออ
+
+The zoom level will be changed to the previous zoom level. The
+previous select region will be identical to the select region that
+was used to zoom into the current level.  Successive applications of
+this operation will eventually result in the viewing of the entire
+program on the screen.
+
+See also: <ZOOM> <ZOOM_MENU> <ZOOM_MODULE> <ZOOM_ROUTINE>
+::::COMMAND_LINE_FORMAT
+			  Command Line Format
+			  อออออออออออออออออออ
+
+The format for invoking the WATCOM Execution Profiler is:
+ 
+    Usage:    wprof [sample_file]
+
+See also: <DEFAULTS>
+::::CONTROL_MENU
+			      Control Menu
+			      ออออออออออออ
+
+Online help can be requested through this menu.	 A DOS session can
+also be started through this menu.  Changing the current option
+settings and asking about the WATCOM Execution Profiler can also
+be done through selecting menu items. Finally, the WATCOM Execution
+Profiler session can be terminated by selecting the final item.
+::::CUT
+				  Cut
+				  อออ
+
+The amount of information presented by the WATCOM Execution Profiler
+may be overwhelming to the user.  To combat this, the WATCOM Execution
+Profiler allows lines to be selectively removed from view.  A region
+may be selected and cut to accomplish this action.  The cut lines may
+be made visible or invisible, also.
+
+See also: <CUT_MENU> <CUT_LINES_VISIBILITY> <UNCUT>
+::::CUT_LINES_VISIBILITY
+		    Making Cut Lines Hidden/Visible
+		    อออออออออออออออออออออออออออออออ
+
+The display of lines that have been cut may be removed from view by
+the use of this operation.  To uncut the lines, this operation must
+be used to reveal cut lines.
+
+See also: <CUT> <UNCUT> <CUT_MENU>
+::::CUT_MENU
+				Cut Menu
+				ออออออออ
+
+The cut menu contains operations that deal with the "cutting" of lines
+that are displayed.  First of all, a line is either "cut" or normal.
+Furthermore, a "cut" line may be visible or invisible. The Cut Menu
+contains items that allow lines to be changed from normal to "cut"
+(by using the "Cut" item).  Lines may be changed from "cut" to normal
+by use of the "Uncut" menu item.  In order to uncut a line that has
+been cut, it must be visible.  Cut lines are usually invisible but
+they can be made visible by using the "Cut Lines Hidden/Visible" menu
+item to toggle between these two states.
+
+See also: <CUT> <UNCUT> <CUT_LINES_VISIBILITY>
+::::DEFAULTS
+			 Configuration Defaults
+			 ออออออออออออออออออออออ
+
+The following defaults are used:
+ 
+* Sample file extension: ".SMP"
+* Executable file extension: ".EXE"
+* Source file extension: ".C"
+* Source path:	Current directory
+* Sample counts are shown for each line
+* Lines with no samples are not shown
+* Lines with no overlay requests or program marks are not shown
+* Absolute percentages are shown for each line
+* Histogram indicates relative percentages
+* Mixing of source lines within the assembly lines
+* Operation code bytes are not shown for assembly lines
+
+See also: <SOURCE_PATH> <OPTIONS>
+::::ERROR
+				 Errors
+				 ออออออ
+
+Various types of error conditions may arise during the execution of
+the WATCOM Execution Profiler.	These errors are reported and must be
+acknowledged.  The severity of the error may require the termination
+of the WATCOM Execution Profiler after the error is acknowledged.
+
+See also: <TECHNICAL_SUPPORT>
+::::FILE
+			      File Browser
+			      ออออออออออออ
+
+The File Browser may be used in situations where a file is required
+for continuation of the program or an output file name is required
+by the WATCOM Execution Profiler.
+
+See also: <LOAD_OPTIONS> <SAVE_OPTIONS>
+::::HELP
+		       How to use the HELP System
+		       ออออออออออออออออออออออออออ
+ 
+You are now looking at Help text which can be used to help you
+understand the particular component that you are now using.
+ 
+When the text is too long to be displayed, you can view the next
+screenful by pressing the key labelled "PgDn" or "Page Down".
+Similarly, the preceding screenful can be viewed by pressing "PgUp" or
+"PageUp".
+ 
+Sometimes the Help text contains references to other text such as
+<INDEX> which will allow you to obtain Help about another topic (in
+this case, to display the index of help topics for your current
+software package). When there is only one such reference visible on
+the screen, pressing the Enter key will cause that Help topic to be
+displayed. When there is a number of references, the current topic
+will be displayed when the Enter key is pressed. You can change the
+current topic by successively pressing the TAB-FORWARD, TAB_BACKWARD,
+or any of the cursor-positioning keys (denoted with arrows on your
+keyboard).
+ 
+While Help text is being displayed, you can obtain this Help text by
+pressing the F1 key. Similary, if you press the F2 key, then an index
+for your software will be displayed.
+ 
+When you have displayed more than one topic, you can switch from topic
+to topic by pressing the F3 (view the next topic) or the F4 (view the
+last topic) keys.
+ 
+If your computer has a mouse attached to it, the mouse can be used in
+the Help system, with the scroll bar on the right (see <SCROLL_BAR>)
+or to select a topic (press and release the leftmost button of the
+mouse while the mouse cursor is located on the topic). A scroll bar is
+visible only when the current topic is too long to be displayed on the
+screen.
+
+See also: <MAIN_HELP> <MENUS> <HOT_SPOTS> <MOUSE>
+::::HelpAboutHelp
+		       How to use the HELP System
+		       ออออออออออออออออออออออออออ
+ 
+You are now looking at Help text which can be used to help you
+understand the particular component that you are now using.
+ 
+When the text is too long to be displayed, you can view the next
+screenful by pressing the key labelled "PgDn" or "Page Down".
+Similarly, the preceding screenful can be viewed by pressing "PgUp" or
+"PageUp".
+ 
+Sometimes the Help text contains references to other text such as
+<INDEX> which will allow you to obtain Help about another topic (in
+this case, to display the index of help topics for your current
+software package). When there is only one such reference visible on
+the screen, pressing the Enter key will cause that Help topic to be
+displayed. When there is a number of references, the current topic
+will be displayed when the Enter key is pressed. You can change the
+current topic by successively pressing the TAB-FORWARD, TAB_BACKWARD,
+or any of the cursor-positioning keys (denoted with arrows on your
+keyboard).
+ 
+While Help text is being displayed, you can obtain this Help text by
+pressing the F1 key. Similarily, if you press the F2 key, then an
+index for your software will be displayed.
+ 
+When you have displayed more than one topic, you can switch from topic
+to topic by pressing the F3 (view the next topic) or the F4 (view the
+last topic) keys.
+ 
+If your computer has a mouse attached to it, the mouse can be used in
+the Help system, with the scroll bar on the right or to select a topic
+(press and release the leftmost button of the mouse while the mouse
+cursor is located on the topic). A scroll bar is visible only when the
+current topic is too long to be displayed on the screen.
+
+See also: <MAIN_HELP> <MENUS> <HOT_SPOTS> <MOUSE>
+::::HOT_SPOTS
+			       Hot spots
+			       อออออออออ
+ 
+Hot spots are areas on the screen which contain text indicating
+function keys or special keys such as Escape or Enter. You can see a
+number areas at the bottom of the area for this help text.
+ 
+If you have a mouse, clicking the mouse on a hot spot is equivalent to
+pressing the indicated key. If you don't have a mouse, then these
+areas cannot be used (instead, use the indicated keys from the
+keyboard to activate the function).
+
+See also: <HELP> <MAIN_HELP> <MENUS> <MOUSE>
+::::INDEX
+			     Profiler Index
+			     ออออออออออออออ
+
+Select the topic on which you need help:
+<ABOUT>		       <ABSOLUTE>	    <BACKOUT>
+<COMMAND_LINE_FORMAT>  <CONTROL_MENU>	    <CUT>
+<CUT_LINES_VISIBILITY> <CUT_MENU>	    <DEFAULTS>
+<LISTING>	       <MARKS>		    <MODE_MENU>
+<OPERATIONS_MENU>      <OPTIONS>	    <OVERLAYS>
+<PATH_EDIT>	       <QUIT>		    <RELATIVE>
+<SAMPLES>	       <SOURCE_PATH>	    <SYSTEM>
+<TECHNICAL_SUPPORT>    <THREADS>	    <TIME_RANGE>
+<UNCUT>		       <ZOOM>		    <ZOOM_MENU>
+<ZOOM_MODULE>	       <ZOOM_ROUTINE>
+
+See also: <MENUS> <HOT_SPOTS> <MOUSE> <SCROLL_BAR>
+	  <HELP> <MAIN_HELP>
+::::LISTING
+			    Analysis Listing
+			    ออออออออออออออออ
+
+A file will be generated that lists modules and routines along with
+their associated sample counts. In addition, a summary of the sampled
+execution will be saved in this file. There are two parts to the
+listing of the analysis:
+
+(1) Modules listed in sorted order according to the number of samples
+(2) Modules with their contained routines (the modules are in the
+    same order as part 1)
+
+See also: <OPERATIONS_MENU> <THREAD_SELECTION> <TIME_RANGE>
+	  <PATH_EDIT>
+::::LOAD_OPTIONS
+			      Load Options
+			      ออออออออออออ
+
+The current settings for options and hidden lines may be saved for
+future use through a configuration file.  The state of the WATCOM
+Execution Profiler may be loaded in the options form.
+
+See also: <OPTIONS>
+::::MAIN_HELP
+			How to use the Profiler
+			อออออออออออออออออออออออ
+
+The WATCOM Execution Profiler takes the information from the sample
+file (which records a single session of a program's execution) and
+displays the results in a graphical form.  Regions of concentrated
+activity are visible and can be explored by zooming into the regions
+in question.  The quantities measured in the graphical display may be
+either samples, overlay loads, or program marks.  Successive zoom
+levels increase the detail from modules to routines to source lines
+and finally to assembly code.  The zoom levels may be backed out of
+in order to try new possibilities.  The interactive nature of the
+WATCOM Execution Profiler is an important feature because learning
+about the behaviour of the profiled program should be as enjoyable
+as possible to encourage experimentation and innovation in attacking
+the problems of improving performance.
+
+See also: <SAMPLES> <OVERLAYS> <MARKS> <ZOOM> <BACKOUT> <CUT> <UNCUT>
+::::MARK_SELECTION
+			     Mark Selection
+			     ออออออออออออออ
+
+In order to set a time range accurately, a program may insert "marks"
+into the sample file so that the sample file contains a record of
+the exact time that the execution reached a certain point in the
+program.  These marks may be used to set the time range used in the
+analysis.  The Mark Selection dialogue box contains any program marks
+that are valid in the time range.  A time is displayed for each
+program mark.  A mark/time can be selected by using the cursor keys
+to move the highlighted line to the desired mark/time and pressing
+Enter.	The mouse can be used to select a mark/time by pressing and
+releasing the left-most mouse button while the cursor is on top of
+the desired mark/time.
+
+See also: <TIME_RANGE>
+::::MARKS
+			     Program Marks
+			     อออออออออออออ
+
+Program marks can be inserted by the programmer to delimit phases
+of the program.	 The WATCOM Execution Sampler will save any program
+mark strings in the sample file along with the time that the mark
+occurred during the execution.	The WATCOM Execution Profiler makes
+use of this information to display how many marks where initiated
+during the execution of the program. The display can be refined by
+zooming into regions so that the exact sequence of assembly
+instructions that initiated the program mark can be identified.
+
+See also: <SAMPLES> <OVERLAYS> <TIME_RANGE>
+::::MENUS
+			    How to use Menus
+			    ออออออออออออออออ
+ 
+When you start an application, you are presented with a "menu bar" on
+the first line of the screen. Each of the names on that line
+represents a menu of actions that you can request.
+ 
+Using the keyboard
+ออออออออออออออออออ
+ 
+You can pull down one of the menus by pressing the Alt key and the
+space bar simultaneously. You can then cycle through the menus by
+pressing the cursor-right or cursor-left keys.
+ 
+When a menu is first pulled down, the first item in the menu is
+highlighted to indicate that it is the current item. You can press the
+cursor-down or the cursor-up keys to change the current item.
+ 
+If you wish to cancel the menu-selection process, press the Escape key
+(Esc) and the current menu will disappear. If you wish to select one
+of the actions, use the cursor-up and/or cursor-down keys to make that
+action the current item (the high-lighted one) and then press the
+Enter key.
+ 
+ALT key and a letter
+ออออออออออออออออออออ
+ 
+When no menus have been pulled down, pressing the Alt key and a letter
+key simultaneously will pull down the menu for the first word on the
+menu bar that starts with that letter.
+ 
+When a menu is pulled down, pressing the Alt key and a letter key
+simultaneously will select the first item in the menu that starts with
+that letter.
+ 
+Using the mouse (see also <MOUSE>)
+ออออออออออออออออออออออออออออออออออ
+ 
+The menu for an item on the menu bar will be pulled down when you
+press the leftmost mouse button while the mouse cursor is within that
+item. To select an item from the menu, drag the mouse (move the mouse
+without releasing the mouse button) so that the mouse cursor is within
+the item to be selected and then release the mouse button.
+ 
+Once a menu has been pulled down, if you drag the mouse to another
+word on the menu bar, then the menu for the new word is pulled down.
+The menu for the old word will disappear.
+ 
+If you decide that you wish to cancel the menu-selection process, be
+careful to release the mouse button while the mouse cursor is
+positioned anywhere except within an item in the menu that is pulled
+down.
+
+See also: <HELP> <MAIN_HELP> <HOT_SPOTS> <MOUSE>
+::::MODE_MENU
+			       Mode Menu
+			       อออออออออ
+
+The Mode menu is used to switch between the three different types of
+measurements that can be displayed by the WATCOM Execution Profiler.
+These measurements are: samples, overlay loads, and program marks.
+
+See also: <SAMPLES> <OVERLAYS> <MARKS>
+::::MOUSE
+			    Using the Mouse
+			    อออออออออออออออ
+ 
+General Information
+อออออออออออออออออออ
+ 
+The mouse is a pointing device. As you move the mouse, the mouse
+cursor (a rectangular box) will move correspondingly about the screen.
+Moving the mouse, without pressing any of the button(s) on it has no
+effect except to move the mouse cursor.
+ 
+The first mouse button (the leftmost one) or the only one, depending
+upon the particular mouse that you have, is used to signal the
+pointing interaction. When you press the button, you are starting a
+mouse interaction that is completed when you release that button. The
+particular interaction depends on the location of the mouse cursor
+when you press the mouse.
+ 
+The term "click the mouse" means to press and then to immediately
+release the leftmost button on the mouse without moving it. Typically,
+you click the mouse to select an item or to invert the value of a
+check field.
+ 
+The term "drag the mouse" means to move the mouse while the mouse
+button is depressed. Typically, you drag the mouse while a mouse
+interaction is not yet complete.
+ 
+Using the mouse with menus (see also <MENUS>)
+อออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The menu for an item on the menu bar will be pulled down when you
+press the leftmost mouse button while the mouse cursor is within that
+item. To select an item from the menu, drag the mouse (move the mouse
+without releasing the mouse button) so that the mouse cursor is within
+the item to be selected and then release the mouse button.
+ 
+Once a menu has been pulled down, if you drag the mouse to another
+word on the menu bar, then the menu for the new word is pulled down.
+The menu for the old word will disappear.
+ 
+If you decide that you wish to cancel the menu-selection process, be
+careful to release the mouse button while the mouse cursor is
+positioned anywhere except within an item in the menu that is pulled
+down.
+ 
+Using the mouse with Hot Spots
+ออออออออออออออออออออออออออออออ
+ 
+Hot spots are areas on the screen which contain text indicating
+function keys or special keys such as Escape or Enter. You can see a
+number areas at the bottom of the area for this help text.
+ 
+If you have a mouse, clicking the mouse on a hot spot is equivalent to
+pressing the indicated key. If you don't have a mouse, then these
+areas cannot be used (instead, use the indicated keys from the
+keyboard to activate the function).
+ 
+Using the mouse while editing
+อออออออออออออออออออออออออออออ
+ 
+If you click the mouse on an editable field into which data can be
+typed, the keyboard cursor is positioned to the field. The keyboard
+position is identical to the position of the mouse cursor if there is
+a non-blank character at that position or to the right of that
+position; otherwise, the keyboard cusror is positioned immediately
+following the right-most non-blank character.
+ 
+If you click the mouse on a check field, the value of the field is
+changed. A check field is preceded by "(*)" to indicate that the value
+is true and by "( )" to indicate a false value.
+ 
+If you click the mouse on a radio button, that button becomes the
+active button (and the previous active button becomes inactive). The
+active radio button is indicated by "[X]" at the start of the field;
+other buttons in that set of radio buttons will start with "[ ]".
+ 
+In these cases, you don't actually have to click the mouse, although
+this is what you would normally do. To be more precise, you must press
+the mouse button while the mouse cursor is within the framed window
+containing the field in question. The button is released while the
+mouse cursor is within the field in question (the mouse could have
+been dragged to that field).
+
+See also: <HELP> <MAIN_HELP> <MENUS> <HOT_SPOTS>
+::::OPERATIONS_MENU
+			    Operations Menu
+			    อออออออออออออออ
+
+The Operations menu is used for requesting miscellaneous operations.
+The four operations are: thread selection, time range adjustment,
+producing a listing file, and editting the source file path.
+
+See also: <THREAD_SELECTION> <TIME_RANGE> <LISTING> <PATH_EDIT>
+::::OPTION_ASSEMBLY_BYTES
+		Operation Code Bytes in Assembly Display
+		ออออออออออออออออออออออออออออออออออออออออ
+
+The display of assembly code may include the bytes that make up
+each instruction.  The display of sample measurements is not
+affected by this option.
+
+See also: <OPTION_ASSEMBLY_SOURCE>
+::::OPTION_ASSEMBLY_SOURCE
+		    Source Code in Assembly Display
+		    อออออออออออออออออออออออออออออออ
+
+The display of assembly code may include the source lines that
+were used to create the code.  The display of sample measurements
+is not affected by this option.
+
+See also: <OPTION_ASSEMBLY_BYTES>
+::::OPTION_HISTOGRAM_TYPE
+		   Select Type Measured in Histogram
+		   อออออออออออออออออออออออออออออออออ
+
+The histogram can graphically display absolute or relative
+percentages.  The length of the histogram bar represents the
+percentage of samples for that particular line.	 By default, the
+WATCOM Execution Profiler will display the relative percentages
+of each line with the histogram.
+
+See also: <ABSOLUTE> <RELATIVE> <OPTION_PERCENTAGE_TYPE>
+::::OPTION_NO_REQUESTS
+		      Hide Lines with No Requests
+		      อออออออออออออออออออออออออออ
+
+Hide lines that did not make any overlay load requests or program
+marks.	An overlay load request may cause an actual load of code
+off disk or may already be satisifed because the section is already
+resident.  A line of code that inserts a program mark into the sample
+file is viewed in the same manner as a line of code that requests an
+overlay load in that all "requests" are displayed while non-requesting
+lines may be hidden.  Source code and assembly code are not hidden
+because the programmer has to be able to see the context of an
+overlay load during analysis.
+
+See also: <OVERLAYS> <OPTION_NO_SAMPLES> <SAMPLES> <MARKS>   
+::::OPTION_NO_SAMPLES
+		       Hide Lines with no Samples
+		       ออออออออออออออออออออออออออ
+
+Hide lines which do not have any samples associated with them.
+For source code and assembly code, there will be many lines with
+no samples recorded.  In this case, the WATCOM Execution Profiler
+will display the lines so that the intuitive nature of this option
+is preserved (hiding source code could cause problems in analysis
+by the programmer).
+
+See also: <SAMPLES> <OPTION_NO_REQUESTS> <OVERLAYS> <MARKS>
+::::OPTION_PERCENTAGE
+			   Display Percentage
+			   ออออออออออออออออออ
+
+A percentage for each line may be displayed.  The percentage can
+be either absolute or relative.	 By default, the WATCOM Execution
+Profiler displays the absolute percentage for each line.
+
+See also: <ABSOLUTE> <RELATIVE>
+	  <OPTION_PERCENTAGE_TYPE> <OPTION_HISTOGRAM_TYPE>
+::::OPTION_PERCENTAGE_TYPE
+		  Change type of percentage displayed
+		  อออออออออออออออออออออออออออออออออออ
+
+A percentage for each line may be displayed.  The percentage can
+be either absolute or relative.	 By default, the WATCOM Execution
+Profiler displays the absolute percentage for each line.
+
+See also: <ABSOLUTE> <RELATIVE>
+	  <OPTION_PERCENTAGE> <OPTION_HISTOGRAM_TYPE>
+::::OPTION_SAMPLES
+		       Display Number of Samples
+		       อออออออออออออออออออออออออ
+
+The number of samples recorded for each line can often be a valuable
+statistic.  By default, the WATCOM Execution Profiler will display
+the number of samples recorded for a particular line but if this is
+not required, it may be disabled.
+
+See also: <SAMPLES> <OVERLAYS> <MARKS>
+::::OPTIONS
+				Options
+				อออออออ
+
+The WATCOM Execution Profiler may be configured in a variety of
+manners to suit individual tastes and requirements.
+
+See also:
+<OPTION_SAMPLES> <OPTION_NO_SAMPLES> <OPTION_NO_REQUESTS>
+<OPTION_PERCENTAGE> <OPTION_PERCENTAGE_TYPE> <OPTION_HISTOGRAM_TYPE>
+<OPTION_ASSEMBLY_BYTES> <OPTION_ASSEMBLY_SOURCE>
+::::OVERLAYS
+				Overlays
+				ออออออออ
+
+The WATCOM Execution Sampler can recognize when an program requests
+an overlay.  The minimization of these overlay load requests is
+important for improving the speed and organization of overlaid
+programs.  The WATCOM Execution Profiler displays the number of
+overlay load requests that a region initiated.	The display can
+be refined by zooming into regions so that the exact sequence
+of assembly instructions that initiated the overlay load request
+can be identified.
+
+See also: <SAMPLES> <MARKS>
+::::PATH_EDIT
+			    Edit Source Path
+			    ออออออออออออออออ
+
+The source path is searched from the top to the bottom of the
+edittable list of directories.	The directory browser may be used
+to enter a directory into a line (useful for mouse users).  The
+directory browser can be activated by pressing F7 or its hot spot.
+The current highlighted line may be deleted by pressing F6.  A line
+can be inserted before the current line by pressing F5.	 The F4 copy
+action will insert a line after the current line and copy the contents
+of the current line into the new line.	If you want to cancel any
+of your changes, press Escape. Pressing Enter will accept the changes
+made to the source file path.
+
+See also: <SOURCE_PATH> <OPERATIONS_MENU> <THREAD_SELECTION>
+	  <TIME_RANGE> <LISTING>
+::::QUIT
+			   Quit from Profiler
+			   ออออออออออออออออออ
+
+The WATCOM Execution Profiler will exit and return to the system. All
+current settings will be lost unless they have been saved.
+
+See also: <ABOUT>
+::::RELATIVE
+			  Relative Measurments
+			  ออออออออออออออออออออ
+
+Relative measurements are a result of using all of the measurements
+at the current level.  As such, these measurements reflect the
+contribution of the current region to the execution of the program.
+Relative measurements change whenever the level changes.
+
+See also: <ABSOLUTE> <OPTION_HISTOGRAM_TYPE> <OPTION_PERCENTAGE_TYPE>
+::::SAMPLES
+				Samples
+				อออออออ
+
+The WATCOM Execution Sampler sets up the system clock to periodically
+interrupt a program during its execution.  Every time the program is
+interrupted, the WATCOM Execution Sampler records the location in
+memory where the CPU was currently executing instructions.  This
+record of the program's activity at a certain point in time is called
+a sample.  Portions of the program that make up a substantial amount
+of the execution time will be interrupted many times because of the
+increased probability of being interrupted.  The WATCOM Execution
+Profiler makes use of the collection of addresses to grade regions
+of memory by the number of times the program was interrupted.  The
+statistical nature of this type of analysis makes it an ideal tool
+in identifying portions of the program that consume a lot of
+execution time.
+
+See also: <OVERLAYS> <MARKS>
+::::SAVE_OPTIONS
+			      Save Options
+			      ออออออออออออ
+
+The current settings for options and hidden lines may be saved for
+future use through a configuration file.  The state of the WATCOM
+Execution Profiler may be saved in the options form.
+
+See also: <OPTIONS>
+::::SCROLL_BAR
+			      Scroll Bars
+			      อออออออออออ
+ 
+A scroll bar is used when the information to be displayed is too large
+to fit in a display area. A scroll bar can be vertical (displayed up
+and down) when the information is too long and can be horizontal
+(displayed left and right) when the information is too wide.
+ 
+The bar contains two symbols (called icons) at each end plus an area
+in the middle which contains a slider that is used to indicate the
+relative position of the information being displayed to the total
+information. When the display area is too small, the middle area and
+the page-up and page-down icons may be eliminated from the scroll bar.
+ 
+If your computer does not have a mouse attached to it, the scroll bar
+is for display purposes only: it will indicate the relative position
+of the text being displayed. You can reposition the display text by
+pressing the PgUp, PgDn (TAB-FORWARD, TAB-BACKWARD) and the
+cursor-positioning keys (denoted with arrows on the keyboard).
+ 
+When you can use a mouse, the scroll bar can be used to reposition the
+information being displayed. First, you must press the leftmost button
+of the mouse while the mouse cursor is located on the scroll bar. The
+position of the mouse cursor when you release the mouse, determines
+the repositioning. If the mouse cursor is not on the scroll bar at
+this point, no repositioning will take place. If the cursor is on the
+first icon at the top (left) of the scroll bar, the information will
+scroll down (right) one line (column). If the cursor is on the first
+icon at the bottom (right) of the scroll bar, the information will
+scroll up (left) one line (column). If the cursor is on the second
+icon at the top (left) of the scroll bar, the information will scroll
+down (right) by the size of the display area. If the cursor is on the
+second icon at the bottom (right) of the scroll bar, the information
+will scroll up (left) by the size of the display area. If the cursor
+is in the middle area of the scroll bar, the slider is positioned to
+indicate the position of the information to be displayed when the
+mouse button is released.
+::::SOURCE_PATH
+			      Source Path
+			      อออออออออออ
+
+A path specifies an ordering of directories so that files in other
+directories may be located. The WATCOM Execution Profiler makes use
+of a path for locating source files.  This feature is very similar
+to the WATCOM debugger WVIDEO's "SET SOURCE" command.
+
+In the following examples, the * is replaced by the module name:
+
+		C:\PROGRAM\C\*.C
+		F:\ANALYSIS\FOR\*.FOR
+		L:\LIBRARY\SRC		      (*.C is assumed)
+
+WPROF searches the current directory only if no source path is
+specified.
+::::SYSTEM
+			     Exit to System
+			     ออออออออออออออ
+
+Use this menu item if you wish to start a system session but do not
+want to lose your current work in the WATCOM Execution Profiler.
+You may return to the WATCOM Execution Profiler from the system
+session by typing the "exit" command.  The WATCOM Execution Profiler
+will continue executing normally upon completion of the system
+session.
+::::TECHNICAL_SUPPORT
+ ->ABOUT
+::::THREAD_SELECTION
+			    Thread Selection
+			    ออออออออออออออออ
+
+All of the threads that were recorded during the execution of the
+program are displayed in the dialogue box.  A scroll bar is displayed
+if there are many threads.  The "YES" designation means that the
+particular thread's contributes to the execution analysis totals.
+A thread may be removed from the analysis by changing the "YES"
+designation to "no".  This can be done by toggling the particular
+thread's status when the thread's line is highlighted.	All of
+the threads may be excluded or included in the analysis.  These
+operations allow the user to set all threads to a particular status.
+At least one thread must be included in the analysis.
+
+See also: <THREADS> <OPERATIONS_MENU> <TIME_RANGE> <LISTING>
+	  <PATH_EDIT>
+::::THREADS
+				Threads
+				อออออออ
+
+Some operating systems support multiple threads of execution in a
+program.  The WATCOM Execution Sampler records activity for each
+thread in the program.	The WATCOM Execution Profiler can make use
+of this information to allow a user to analyze a single thread's
+execution or a combination of threads' execution.  Initially, the
+WATCOM Execution Profiler will analyze the program with the data
+for all threads.  The threads that were recorded during execution
+can be viewed and adjusted for subsequent analysis.  Any subset
+of the recorded threads (that contains at least one thread) may
+be analyzed.
+
+See also: <THREAD_SELECTION>
+::::TIME_RANGE
+			       Time Range
+			       ออออออออออ
+
+Select the time range from which to select samples. The TAB keys
+switches between left and right. CTRL/LEFT and CTRL/RIGHT move the
+highlighted pointer on the bar left and right, respectively. Zoom
+and Backout control the resolution for time changes. Zoom will allow
+increased fine-tuning of the time range while Backout will move back
+to the previous level of coarse adjustment of the time range. Enter
+accepts the changes, and adjusts the samples, before returning to
+the main screen. Escape cancels the whole operation, and returns to
+the main screen.
+
+See also: <MARK_SELECTION> <OPERATIONS_MENU> <THREAD_SELECTION>
+	  <LISTING> <PATH_EDIT>
+::::UNCUT
+				 Uncut
+				 อออออ
+
+This operation will restore the selected lines from being "cut" to
+normal status.	The cut lines must not be hidden for this operation
+to work because of the requirement for a selected region.
+
+See also: <CUT_MENU> <CUT_LINES_VISIBILITY> <CUT>
+::::ZOOM
+				  Zoom
+				  ออออ
+
+The WATCOM Execution Profiler allows a region to be examined by
+zooming into it.  The zoom operation increases the amount of detail
+that is visible.  The detail changes from modules, to routines, to
+source lines, and finally to assembly code.  Successive applications
+of this operation will eventually result in the viewing of a small
+portion of the program in assembly code on the screen.
+
+See also: <BACKOUT> <ZOOM_MENU> <ZOOM_MODULE> <ZOOM_ROUTINE>
+::::ZOOM_MENU
+			       Zoom Menu
+			       อออออออออ
+
+The Zoom Menu allows you to control the zooming operation. A single
+module or routine can be zoomed into through this menu. Zooming into
+and out of highlighted regions can also be done through these menu
+items.
+
+See also: <ZOOM> <BACKOUT> <ZOOM_MODULE> <ZOOM_ROUTINE>
+::::ZOOM_MODULE
+			      Module Zoom
+			      อออออออออออ
+
+Programs with many different modules can prove cumbersome to work with
+during interaction with the WATCOM Execution Profiler.	It is with
+this in mind that a short-cut has been provided to quickly zoom into
+a module.  The module name may be typed in directly.
+
+See also: <ZOOM> <BACKOUT> <ZOOM_MENU> <ZOOM_ROUTINE>
+::::ZOOM_ROUTINE
+			      Routine Zoom
+			      ออออออออออออ
+
+Programs with many different routines can prove cumbersome to work
+with during interaction with the WATCOM Execution Profiler.  It is
+with this in mind that a short-cut has been provided to quickly zoom
+into a routine.	 The routine name may be typed in directly.
+
+See also: <ZOOM> <BACKOUT> <ZOOM_MENU> <ZOOM_MODULE>

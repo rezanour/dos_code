@@ -1,0 +1,894 @@
+::::BENCH_CONFIGURATION
+		       Configuring your system
+		       อออออออออออออออออออออออ
+ 
+The WCONFIG program is used to configure the InfoBench system.
+Additionally, specific tools may provide tool-specific configuration.
+The "Editor and Configuration" manual describes how to use the WCONFIG
+program.
+ 
+The following aspects may be configured:
+       * screen colours (for colour monitors)
+       * screen shades (for monitors which have shades of grey)
+       * screen attributes (for monochrome monitors)
+       * printers
+       * what is displayed during file browsing
+::::BROWSE_WINDOW
+			   Browsing Window
+			   อออออออออออออออ
+ 
+A browsing window is used to select or view items. The general format
+of the window is as follows:
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤtitleฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+   ณ					   ณ
+   ณ   list of scrolling items		   ณ
+   ณ					   ณ
+   ณEscape=Cancel	       Enter=Selectณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+There will be a scroll bar (see <SCROLL_BAR>) on the right of the
+window if the number of items is greater than the capacity of the
+window.
+ 
+You can cancel the window by pressing the Escape (Esc) key.
+ 
+When the "Enter=Select" hotspot is present, you can select an item in
+the scrolling area by making that item the current item and then
+pressing the Enter key (the Enter key is ignored when the window is to
+be used for viewing only). You can change the current item by pressing
+the CURSOR-UP or the CURSOR-DOWN keys.
+ 
+When the scroll bar is present, the list of items will scroll in the
+window when you press the CURSOR-UP (CURSOR-DOWN) key when the current
+item is at the top (bottom) of the window. You can also display the
+next (last) window of items by pressing the PgDn (PgUp) keys. You can
+position to the start (end) of the list of items by pressing the Ctrl
+and PgUp (Ctrl and PgDn) keys simultaneously.
+ 
+If your computer has a mouse attached to it, you can use the scroll
+bar (see <SCROLL_BAR>) to reposition what is being displayed. You can
+select an item by pressing and releasing the leftmost button of the
+mouse while the mouse cursor is positioned within that item.
+::::CHECK_FIELD
+			     Check Field
+			     อออออออออออ
+ 
+A check field appears as follows:
+   [ ] field name
+or
+   [X] field name
+When there is an "X" between the square brackets, the field is true.
+It is false when there is a space between the square brackets.
+ 
+Setting a check field with the keyboard
+อออออออออออออออออออออออออออออออออออออออ
+ 
+You can set a check field by positioning to that field and then
+pressing the space bar.
+ 
+Setting a check field with the mouse
+ออออออออออออออออออออออออออออออออออออ
+ 
+You can set a check field by clicking the mouse while the mouse cursor
+is within that field. The check field becomes the current field.
+::::DIRECTORY_BROWSE
+			  Directory Browser
+			  อออออออออออออออออ
+ 
+A directory can be selected using a Directory Browsing window which
+appears as follows:
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+   ณ   Directory Field			   ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ					   ณ
+   ณ					   ณ
+   ณ   Scrolling list of directories	   ณ
+   ณ					   ณ
+   ณ					   ณ
+   ณEscape=Cancel   ....       Enter=Selectณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+Initially, the cursor is positioned at the start of the scrolling
+directory field at the top of the form. This field contains the
+current directory to be selected. You can switch between the directory
+field and the scrolling area by using the TAB key.
+ 
+You can press the Escape (Esc) key to cancel the directory browser.
+ 
+You can press the F2 function key to receive a list of the drives on
+your computer (see <DRIVE_BROWSE>). You can select one of these drives
+to become the drive from which directories are displayed by the
+directory browser.
+ 
+Directory Field
+อออออออออออออออ
+ 
+The directory name that is displayed in the directory field determines
+the directory to be selected. When the directory browser was initiated
+from the file browser, the directory field will contain the name of
+the directory from which files were being displayed by the file
+browser.
+ 
+You select this directory by pressing the Enter key when the current
+field is the directory field.
+ 
+You can type a DOS directory name (see <DIRECTORY_NAME>) in this field
+or you can select one of the directories in the scrolling area to be
+placed in this area.
+ 
+Scrolling Area
+ออออออออออออออ
+ 
+The scrolling area shows the directories on the current drive. The
+scrolling area scrolls in the usual way using the cursor keys, PgUp
+(display previous page), PgDn (display next page), Ctrl/PgUp (display,
+starting at beginning), and Ctrl/PgDn (display, last portion).
+ 
+The directories are shown with lines preceding them to denote the
+hierarchical structure of the sub-directories. Each line corresponds
+to one sub-directory.
+ 
+You can select a directory in the scrolling area by pressing the Enter
+key when that directory name is the current field. The full directory
+name will be copied to the directory field which will become the
+current field.
+ 
+Mouse
+อออออ
+ 
+If there is a mouse attached to your computer (see <MOUSE>), then you
+can position to the directory field by pressing and releasing the
+leftmost mouse button while the mouse cursor is positioned on that
+field.
+ 
+If you press and release the mouse while the mouse cursor is
+positioned on a directory in the scrolling area, then that directory
+will be selected into the directory field. You can also use the mouse
+in conjunction with the scroll bar (see <SCROLL_BAR>) to change the
+directory names displayed in the scrolling area.
+ 
+If you "double-click" on a directory field, then that directory will
+be the one selected. You "double-click" the mouse by pressing and
+releasing the leftmost mouse button two times, within a short time
+interval.
+::::DIRECTORY_DIALOGUE
+			  Directory Dialogue
+			  ออออออออออออออออออ
+ 
+The directory window contains fields for the device and directory for
+which files are to be displayed in the file browsing window. You can
+change these fields. When you press Enter, the window will disappear
+and file names from the new directory will appear. If you press the
+Esc (escape) key, the window is cancelled and the directory from which
+files are displayed is unchanged.
+ 
+Directory browsing
+ออออออออออออออออออ
+ 
+Alternately, you can reset the device and directory fields by using
+the path browser (press F2) or the directory browser (press F3). The
+directory browser shows a full tree representation of the directories
+on the current disk drive (see <DIRECTORY_BROWSE>). The path browser
+shows only the path to the current directory and the sub-directories
+found within the current directory (see <PATH_BROWSE>). If you have
+many directories on your disk drive, you may find excessive the time
+that is required to build the full display shown by the directory
+browser (all directories on the drive need to be read).
+::::DIRECTORY_NAME
+			   Directory names
+			   อออออออออออออออ
+ 
+Valid directory names have the following format:
+   [ drive: ] [\] [ name ] [ \name ] ... [ \name ]
+where "name" is an existing sub-directory name. Some examples are:
+   C:\PROJECT1
+   C:\PROJECT1\DATA
+   C:\PROJECT1\DATA\BUDGET
+When the drive is omitted, the current drive is used. The following
+names are equivalent to the preceding names when the current drive is
+"C":
+   \PROJECT1
+   \PROJECT1\DATA
+   \PROJECT1\DATA\BUDGET
+When there is no "\" preceding the first sub-directory name, the
+entered sub-directories are assumed to be sub-directories of the
+current working directory on the indicated drive. Thus, if the current
+working directory on drive "C" is "PROJECT", then the three
+directories could have been given as:
+   C:
+   C:DATA
+   C:DATA\BUDGET
+The special directory named "."
+อออออออออออออออออออออออออออออออ
+ 
+ 
+With DOS, each drive has a special directory termed the "current
+working directory" to which file names apply when there is no path
+specification preceding the file name. This directory can be
+referenced by ".". Thus, if your current working directory is
+C:\PROJECT1\DATA, then, the following are equivalent:
+   .	       C:\PROJECT1\DATA
+   .\JUNE      C:\PROJECT1\DATA\JUNE
+The special directory name ".."
+อออออออออออออออออออออออออออออออ
+ 
+When ".." is used as a directory name, then, it refers to the parent
+directory of in the directory path to that point (or the parent
+directory of the current directory at the start). Thus, the following
+are equivalent when the current directory is C:\PROJECT1\DATA
+   ..		       C:\PROJECT1
+   ..\REPORT	       C:\PROJECT1\REPORT
+   ..\..\PROJECT2\DATA c:\PROJECT2\DATA
+::::DOS_SERVICES
+			     DOS Services
+			     ออออออออออออ
+ 
+The Control menus all contain an item "DOS Services" which, when
+chosen, causes the following actions to occur:
+   * the current application is suspended
+   * the DOS command interpreter is activated
+   * DOS commands can now be entered
+The current application resumes when the DOS "EXIT" command is
+entered.
+::::DRIVE_BROWSE
+			     DRIVE_BROWSE
+			     ออออออออออออ
+ 
+A drive is selected using a Drive Browsing window which appears as
+follows:
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+   ณ   current drive			   ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ					   ณ
+   ณ					   ณ
+   ณ   scrolling list of drives 	   ณ
+   ณ					   ณ
+   ณ					   ณ
+   ณEscape=Cancel	       Enter=Selectณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+Initially, the cursor is positioned at the drive field at the top of
+the form. This field contains the current drive to be selected. You
+can switch between the drive field and the scrolling area by using the
+TAB key.
+ 
+You can press the Escape (Esc) key to cancel the drive browser.
+ 
+When the drive is for removable media (such as a diskette drive), the
+text "-removable" is shown following the drive letter. Otherwise, the
+volume identification for that drive is displayed.
+ 
+Drive Field
+อออออออออออ
+ 
+The drive name that is displayed in the drive field determines the
+drive to be selected. When the drive browser is initiated from the
+directory browser, the drive field will contain the drive for which
+directories were being displayed.
+ 
+You select this drive by pressing the Enter key when the current field
+is the drive field.
+ 
+You can type a valid DOS drive letter in this field or you can select
+one of the drives in the scrolling area to be placed in this field.
+ 
+Scrolling Area
+ออออออออออออออ
+ 
+The scrolling area shows the drives on your computer. The scrolling
+area scrolls in the usual way using the cursor keys, PgUp (display
+previous page), PgDn (display next page), Ctrl/PgUp (display, starting
+at beginning), and Ctrl/PgDn (display, last portion).
+ 
+You can select a drive in the scrolling area by pressing the Enter key
+when that drive is the current field.
+ 
+Drive names are followed by:
+   - removable	   (for diskette drives)
+   volume label    (for hard disk drives)
+Mouse
+อออออ
+ 
+If there is a mouse attached to your computer (see <MOUSE>), then you
+can position to the drive field by pressing and releasing the leftmost
+mouse button while the mouse cursor is positioned on that field.
+ 
+If you press and release the mouse while the mouse cursor is
+positioned on a drive in the scrolling area, then that drive will be
+selected into the drive field. You can also use the mouse in
+conjunction with the scroll bar (see <SCROLL_BAR>) to change the drive
+names displayed in the scrolling area.
+ 
+If you "double-click" on a drive field, then that drive will be the
+one selected. You "double-click" the mouse by pressing and releasing
+the leftmost mouse button two times, within a short time interval.
+::::FILE_BROWSER
+ ->FileBrowser
+::::FILE_DISPLAY_OPTIONS
+	   Setting the display options for the File Browser
+	   ออออออออออออออออออออออออออออออออออออออออออออออออ
+ 
+Display options
+อออออออออออออออ
+ 
+Display options are check fields (see <CHECK_FIELD>) which determine
+what can be displayed about a file name. When the option is true (an
+"X" is shown), the file browser will display the corresponding
+information for each file. The options are:
+   Time:	the time that the file was last updated
+   Date:	the date that the file was last updated
+   File Size:	the size of the file
+   Attribute:	the file attributes
+   Description: a file description for the extension
+Attributes are shown as letters where
+   A: file has not been archived
+   R: file is read/only
+Descriptions are based upon the file extension and indicate the
+probable use of that file. For example, the WP word processor uses
+files with an extension of "DOC" and the WATCOM Spreadsheet uses an
+extension of "WSS".
+ 
+Directory Browsing
+ออออออออออออออออออ
+ 
+There are three radio buttons (see <RADIO_BUTTON>) to determine what
+type of directory browsing should be obtained from the file browsing
+window:
+   Path Browsing       (see <PATH_BROWSE>)
+   Directory Browsing  (see <DIRECTORY_BROWSE>)
+   Directory Dialogue  (see <DIRECTORY_DIALOGUE>)
+File Pattern
+ออออออออออออ
+ 
+The window also contains a field for the file pattern used to select
+file names to be displayed. This field shows the pattern used to
+restrict the files to be displayed. An application may set a pattern
+to restrict the display to only files with a particular file
+extension. You can change this pattern if you wish only certain files
+to be displayed.
+ 
+A pattern "*.*" will cause all files to be displayed.
+ 
+A file name consists of up to eight characters followed by an optional
+period and an optional file extension of up to three characters. Some
+valid file names are:
+   MYDATA
+   MYDATA.DAT
+   BUDGET.DAT
+   MORE.DAT
+A file name which matches the pattern will be displayed.
+ 
+The pattern can contain special characters "?" and "*". Characters in
+the pattern and the file name are compared one at a time according to
+the following rules:
+  (1) A "?" matches any character in a file name.
+  (2) A "*" causes the remaining characters in a file name or
+      extension to match.
+  (3) Any other character must match the corresponding character in
+      the file name.
+Some examples are:
+	       *.*     *.dat   mydata.*    m*.dat  m?data.*
+   MYDATA      match	       match		   match
+   MYDATA.DAT  match   match   match	   match   match
+   MODATA.DAT  match   match		   match   match
+   BUDGET.DAT  match   match
+   MONDAY.DAT  match   match		   match
+Include sub-directories in Browse window
+ออออออออออออออออออออออออออออออออออออออออ
+ 
+When this check field (see <CHECK_FIELD>) is set (an asterisk (*)
+appears), the parent directory (unless you are at the root of the
+device) and any sub-directories will be displayed in the scrolling
+area of the file browser. The parent directory is shown as:
+   * parent directory
+and a sub-directory "XXXX" is shown as
+   * sub-directory: XXXX
+Remember last directory browsed.
+ออออออออออออออออออออออออออออออออ
+ 
+When this check field (see <CHECK_FIELD>) is set (an asterisk (*)
+appears), the system will remember the directory in which you were
+browsing. This directory will be used as the starting directory the
+next time that the file browser is activated during your current
+session.
+ 
+When the field is not set, the initial directory is your current
+working directory.
+ 
+Configuration
+อออออออออออออ
+ 
+The Infobench configuration program (WCONFIG) can be used to configure
+the file browser for all WATCOM tools (see <BENCH_CONFIGURATION> for a
+description.
+ 
+::::FileBrowser
+			     File Browser
+			     ออออออออออออ
+ 
+A file is selected using a File Browsing window which appears as
+follows:
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+   ณ   current file			   ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ					   ณ
+   ณ					   ณ
+   ณ   scrolling list of files		   ณ
+   ณ					   ณ
+   ณ					   ณ
+   ณEscape=Cancel   ....       Enter=Selectณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+Depending upon the application that is displaying the browsing window,
+there may be extra fields at the top of the window and/or extra fields
+before the hot spots at the bottom of the window.
+ 
+You can cancel the file selection process by pressing the Escape (Esc)
+key.
+ 
+Initially, the cursor is positioned at the start of the scrolling file
+field at the top of the display window. You can switch between the
+file field and the scrolling area by using the TAB key.
+ 
+You can press the F2 function key to obtain a window in which you can
+change the directory from which files are displayed. Depending upon
+how file browsing is configured, one of the following hotspots will be
+shown at the bottom of file-browsing window:
+       F2=Set-directory    (see <DIRECTORY_DIALOGUE>)
+       F2=Path-Browsing    (see <PATH_BROWSE>)
+       F2=Direct.-Browsing (see <DIRECTORY_BROWSE>)
+ 
+You can press the F3 function key to receive a window in which your
+current file-display options are listed (see <FILE_DISPLAY_OPTIONS>).
+You can change these options to
+       * alter the format of file entries which are displayed
+       * set the method to change directories
+       * remember the last browse directory
+       * include or exclude sub-directories in the scrolling
+	 area
+       * restrict the displayed file names to match a given
+	 pattern
+ 
+The Infobench configuration program (WCONFIG) can be used to configure
+the file browser for all WATCOM tools (see <BENCH_CONFIGURATION> for a
+description.
+ 
+File Field
+ออออออออออ
+ 
+The file name that is displayed in the file field determines the file
+to be selected. Initially, this field is blank. You select this file
+by pressing the Enter key when the current field is the file field.
+ 
+You can type a valid DOS file name in this field or you can select one
+of the files in the scrolling area to be placed in this area.
+ 
+Scrolling Area
+ออออออออออออออ
+ 
+The scrolling area shows any files in the current directory which
+match the file pattern. The file pattern is described in
+<FILE_DISPLAY_OPTIONS>. The scrolling area scrolls in the usual way
+using the cursor keys, PgUp (display previous page), PgDn (display
+next page), Ctrl/PgUp (display, starting at beginning), and Ctrl/PgDn
+(display, last portion).
+ 
+You can select a file name in the scrolling area by pressing the Enter
+key when that file name is the current field. The file name will be
+copied to the file field which will become the current field.
+ 
+If the file browser is configured to include sub-directories within
+the scrolling area, then selecting one those directories will change
+the directory from which files are displayed.
+ 
+Mouse
+อออออ
+ 
+If there is a mouse attached to your computer (see <MOUSE>), then you
+can position to the file field by pressing and releasing the leftmost
+mouse button while the mouse cursor is positioned on that field.
+ 
+If you press and release the mouse while the mouse cursor is
+positioned on a file in the scrolling area, then that file will be
+selected into the file field. You can also use the mouse in
+conjunction with the scroll bar (see <SCROLL_BAR>) to change the file
+names displayed in the scrolling area.
+ 
+If you "double-click" on a file field, then that file will be the one
+selected. You "double-click" the mouse by pressing and releasing the
+leftmost mouse button two times, within a short time interval.
+::::HelpAboutHelp
+		      How to use the HELP System
+		      ออออออออออออออออออออออออออ
+ 
+You are now looking at Help text which can be used to help you
+understand the particular component that you are now using.
+ 
+When the text is too long to be displayed, you can view the next
+screenful by pressing the key labelled "PgDn" or "Page Down".
+Similarly, the preceding screenful can be viewed by pressing "PgUp" or
+"PageUp".
+ 
+Sometimes the Help text contains references to other text such as
+<INDEX> which will allow you to obtain Help about another topic (in
+this case, to display the index of help topics for your current
+software package). When there is only one such reference visible on
+the screen, pressing the Enter key will cause that Help topic to be
+displayed. When there is a number of references, the current topic
+will be displayed when the Enter key is pressed. You can change the
+current topic by successively pressing the TAB-FORWARD, TAB_BACKWARD,
+or any of the cursor-positioning keys (denoted with arrows on your
+keyboard).
+ 
+While Help text is being displayed, you can obtain this Help text by
+pressing the F1 key. Similarily, if you press the F2 key, then an
+index for your software will be displayed.
+ 
+When you have displayed more than one topic, you can switch from topic
+to topic by pressing the F3 (view the next topic) or the F4 (view the
+last topic) keys.
+ 
+If your computer has a mouse attached to it, the mouse can be used in
+the Help system, with the scroll bar on the right (see <SCROLL_BAR>)
+or to select a topic (press and release the leftmost button of the
+mouse while the mouse cursor is located on the topic). A scroll bar is
+visible only when the current topic is too long to be displayed on the
+screen.
+::::HelpMenu
+		       How to use the InfoBench
+		       ออออออออออออออออออออออออ
+ 
+If you do not know how to use the Help system, press the Help key (F1)
+and a description of how to use Help will be displayed.
+ 
+Across the top of your screen you will see the menu bar which consists
+of a number of menu names (the first menu is "Control"). There is a
+number of actions available for each of these menus. If you wish to
+learn more about how to use the menus, see <MENUS>.
+ 
+You can learn more about this application by examining the information
+for the topics in the index (press F2 to obtain the index) or by
+selecting the "Help" item in "Control" menu.
+ 
+There may also be information that is specific to your installation.
+See <INSTALLATION_HELP> for details.
+::::HOT_SPOTS
+Hot spots are areas on the screen which contain text indicating
+function keys or special keys such as Escape or Enter. You can see a
+number areas at the bottom of the area for this help text.
+ 
+If you have a mouse, clicking the mouse on a hot spot is equivalent to
+pressing the indicated key. If you don't have a mouse, then these
+areas cannot be used (instead, use the indicated keys from the
+keyboard to activate the function).
+ 
+::::MENUS
+			   How to use Menus
+			   ออออออออออออออออ
+ 
+When you start an application, you are presented with a "menu bar" on
+the first line of the screen. Each of the names on that line
+represents a menu of actions that you can request.
+ 
+Using the keyboard
+ออออออออออออออออออ
+ 
+You can activate the menu bar by pressing and releasing the Alt key.
+You can then cycle through the menu names on the menu bar by pressing
+the cursor-right or cursor-left keys. You can deactivate the menu bar
+by pressing the Escape key.
+ 
+When the menu bar is active, each name has a unique "hot letter" which
+is high-lighted within the menu-bar name. If you press the key for one
+of those letters, the associated menu will be pulled down. When the
+menu bar is active, you can also pull down a menu by pressing any of
+the cursor-down, cursor-up, or Enter keys.
+ 
+When a menu is pulled down, you can then cycle through the menus by
+pressing the cursor-right or cursor-left keys.
+ 
+When a menu is first pulled down, the first item in the menu is
+highlighted to indicate that it is the current item. You can press the
+cursor-down or the cursor-up keys to change the current item.
+ 
+If you wish to cancel the menu-selection process, press the Escape key
+(Esc) and the current menu will disappear.
+ 
+If you wish to select one of the actions, use the cursor-up and/or
+cursor-down keys to make that action the current item (the
+high-lighted one) and then press the Enter key. Alternatively, you can
+type the "hot letter" which is high-lighted within the menu item.
+ 
+Using the mouse (see also <MOUSE>)
+ออออออออออออออออออออออออออออออออออ
+ 
+The menu for an item on the menu bar will be pulled down when you
+press the leftmost mouse button while the mouse cursor is within that
+item, and then drag downwards (without releasing the mouse button ).
+To select an item from the menu, drag the mouse (move the mouse
+without releasing the mouse button) so that the mouse cursor is within
+the item to be selected and then release the mouse button.
+ 
+If you drag the mouse to another menu name on the menu bar, then the
+menu for the new name is pulled down. The menu for the old name will
+disappear.
+ 
+If you decide that you wish to cancel the menu-selection process, be
+careful to release the mouse button while the mouse cursor is not
+positioned within either the menu bar or within a menu.
+ 
+If you wish to pull down a menu, press and release the leftmost mouse
+button, while the mouse cursor is within that menu name on the menu
+bar.
+ 
+If you wish to cancel a pulled-down menu, press and release the
+leftmost mouse button, while the mouse cursor is within the name of
+the menu on the menu bar.
+ 
+::::MOUSE
+			   Using the Mouse
+			   อออออออออออออออ
+ 
+General Information
+อออออออออออออออออออ
+ 
+The mouse is a pointing device. As you move the mouse, the mouse
+cursor (a rectangular box) will move correspondingly about the screen.
+Moving the mouse, without pressing any of the button(s) on it has no
+effect except to move the mouse cursor.
+ 
+The first mouse button (the leftmost one) or the only one, depending
+upon the particular mouse that you have, is used to signal the
+pointing interaction. When you press the button, you are starting a
+mouse interaction that is completed when you release that button. The
+particular interaction depends on the location of the mouse cursor
+when you press the mouse.
+ 
+The term "click the mouse" means to press and then to immediately
+release the leftmost button on the mouse without moving it. Typically,
+you click the mouse to select an item, to invert the value of a check
+field (see <CHECK_FIELD>), or to set a radio button (see
+<RADIO_BUTTON>).
+ 
+The term "drag the mouse" means to move the mouse while the mouse
+button is depressed. Typically, you drag the mouse while a mouse
+interaction is not yet complete.
+ 
+Using the mouse with menus (see also <MENUS>)
+อออออออออออออออออออออออออออออออออออออออออออออ
+ 
+The menu for an item on the menu bar will be pulled down when you
+press the leftmost mouse button while the mouse cursor is within that
+item, and then drag downwards (without releasing the mouse button ).
+To select an item from the menu, drag the mouse (move the mouse
+without releasing the mouse button) so that the mouse cursor is within
+the item to be selected and then release the mouse button.
+ 
+If you drag the mouse to another menu name on the menu bar, then the
+menu for the new name is pulled down. The menu for the old name will
+disappear.
+ 
+If you decide that you wish to cancel the menu-selection process, be
+careful to release the mouse button while the mouse cursor is not
+positioned within either the menu bar or within a menu.
+ 
+If you wish to pull down a menu, press and release the leftmost mouse
+button, while the mouse cursor is within that menu name on the menu
+bar.
+ 
+If you wish to cancel a pulled-down menu, press and release the
+leftmost mouse button, while the mouse cursor is within the name of
+the menu on the menu bar.
+ 
+Using the mouse with Hot Spots
+ออออออออออออออออออออออออออออออ
+ 
+Hot spots are areas on the screen which contain text indicating
+function keys or special keys such as Escape or Enter. You can see a
+number areas at the bottom of the area for this help text.
+ 
+If you have a mouse, clicking the mouse on a hot spot is equivalent to
+pressing the indicated key. If you don't have a mouse, then these
+areas cannot be used (instead, use the indicated keys from the
+keyboard to activate the function).
+ 
+Using the mouse while editing
+อออออออออออออออออออออออออออออ
+ 
+If you click the mouse on an editable field into which data can be
+typed, the keyboard cursor is positioned to the field. The keyboard
+position is identical to the position of the mouse cursor if there is
+a non-blank character at that position or to the right of that
+position; otherwise, the keyboard cursor is positioned immediately
+following the right-most non-blank character.
+ 
+If you click the mouse on a check field, the value of the field is
+changed. A check field is preceded by "[X]" to indicate that the value
+is true and by "[ ]" to indicate a false value. See <CHECK_FIELD> for
+more details.
+ 
+If you click the mouse on a radio button, that button becomes the
+active button (and the previous active button becomes inactive). The
+active radio button is indicated by "(*)" at the start of the field;
+other buttons in that set of radio buttons will start with "( )". See
+<RADIO_BUTTON> for more details.
+ 
+In these cases, you don't actually have to click the mouse, although
+this is what you would normally do. To be more precise, you must press
+the mouse button while the mouse cursor is within the framed window
+containing the field in question. The button is released while the
+mouse cursor is within the field in question (the mouse could have
+been dragged to that field).
+::::PATH_BROWSE
+			     Path Browser
+			     ออออออออออออ
+ 
+A directory can be selected using the Path Browsing window which
+appears as follows:
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+   ณ   current directory		   ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ					   ณ
+   ณ					   ณ
+   ณ   scrolling list of directories	   ณ
+   ณ   in path				   ณ
+   ณ					   ณ
+   ณEscape=Cancel   ....       Enter=Selectณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+Initially, the cursor is positioned at the start of the scrolling
+directory field at the top of the form. This field contains the
+current directory to be selected. You can switch between the directory
+field and the scrolling area by using the TAB key.
+ 
+You can press the Escape (Esc) key to cancel the path browser.
+ 
+You can press the F2 function key to receive a list of the drives on
+your computer (see <DRIVE_BROWSE>). You can select one of these drives
+to become the drive from which directories are displayed by the
+directory browser.
+ 
+Directory Field
+อออออออออออออออ
+ 
+The directory name that is displayed in the directory field determines
+the directory to be selected. When the path browser was initiated from
+the directory window, the directory field will contain the name of the
+directory on the drive displayed on that window.
+ 
+You select this directory by pressing the Enter key when the current
+field is the directory field.
+ 
+You can type a DOS directory name (see <DIRECTORY_NAME>) in this field
+or you can select one of the directories in the scrolling area to be
+placed in this area. In either case, the display will change to
+reflect the path selected.
+ 
+Scrolling Area
+ออออออออออออออ
+ 
+The scrolling area shows the path to the directory in the directory
+field and the sub-directories of that directory. If you select any of
+the directories that are displayed, that directory replaces the
+directory in the directory field and the scrolling area is re-drawn
+for the selected directory. Thus, with successive selections, you can
+quickly change the displayed path and locate the directory for which
+you are searching.
+ 
+The scrolling area scrolls in the usual way using the cursor keys,
+PgUp (display previous page), PgDn (display next page), Ctrl/PgUp
+(display, starting at beginning), and Ctrl/PgDn (display, last
+portion).
+ 
+Mouse
+อออออ
+ 
+If there is a mouse attached to your computer (see <MOUSE>), then you
+can position to the directory field by pressing and releasing the
+leftmost mouse button while the mouse cursor is positioned on that
+field.
+ 
+If you press and release the mouse while the mouse cursor is
+positioned on a directory in the scrolling area, then that directory
+will be selected into the directory field and the scrolling area will
+be re-drawn. You can also use the mouse in conjunction with the scroll
+bar (see <SCROLL_BAR>) to change the directory names displayed in the
+scrolling area.
+ 
+If you "double-click" on a directory field, then that directory will
+be the one selected. You "double-click" the mouse by pressing and
+releasing the leftmost mouse button two times, within a short time
+interval.
+::::RADIO_BUTTON
+			    Radio Buttons
+			    อออออออออออออ
+ 
+A set of radio buttons appears as follows:
+       ( ) button-1
+       ( ) button-2
+       . . .
+       ( ) button-N
+The fields may be arranged horizontally, vertically, or in a
+rectangle, depending upon their usage in a particular window. At most
+one of the fields is true and is preceded by (*). When you set a radio
+button to be true, the button that was previously true is set to be
+false.
+ 
+When you cycle through the fields on a form using the TAB keys, only
+the current radio button (the one which is true) is visited.
+ 
+When the current field is a radio button and the buttons occur on more
+than one line, then the CURSOR-UP and the CURSOR-DOWN keys will cycle
+around the set of radio buttons in a vertical manner. When the current
+button is on a line containing more than one button from the current
+set, then the CURSOR-RIGHT and CURSOR-LEFT keys will cycle around the
+buttons in the current set on that line. The current radio button is
+always set to be true.
+ 
+Setting a radio button with the keyboard
+ออออออออออออออออออออออออออออออออออออออออ
+ 
+You can set a radio button by positioning to that field.
+ 
+Setting a radio button with the mouse
+อออออออออออออออออออออออออออออออออออออ
+ 
+You can set a radio button by clicking the mouse while the mouse
+cursor is within that radio button. The radio button becomes the
+current field.
+::::SCROLL_BAR
+			     Scroll Bars
+			     อออออออออออ
+ 
+A scroll bar is used when the information to be displayed is too large
+to fit in a display area. A scroll bar can be vertical (displayed up
+and down) when the information is too long and can be horizontal
+(displayed left and right) when the information is too wide.
+ 
+The bar contains two symbols (called icons) at each end plus an area
+in the middle which contains a slider that is used to indicate the
+relative position of the information being displayed to the total
+information. When the display area is too small, the middle area and
+the page-up and page-down icons may be eliminated from the scroll bar.
+ 
+If your computer does not have a mouse attached to it, the scroll bar
+is for display purposes only: it will indicate the relative position
+of the text being displayed. You can reposition the display text by
+pressing the PgUp, PgDn (TAB-FORWARD, TAB-BACKWARD) and the
+cursor-positioning keys (denoted with arrows on the keyboard).
+ 
+When you can use a mouse, the scroll bar can be used to reposition the
+information being displayed. First, you must press the leftmost button
+of the mouse while the mouse cursor is located on the scroll bar. The
+position of the mouse cursor when you release the mouse, determines
+the repositioning. If the mouse cursor is not on the scroll bar at
+this point, no repositioning will take place. If the cursor is on the
+first icon at the top (left) of the scroll bar, the information will
+scroll down (right) one line (column). If the cursor is on the first
+icon at the bottom (right) of the scroll bar, the information will
+scroll up (left) one line (column). If the cursor is on the second
+icon at the top (left) of the scroll bar, the information will scroll
+down (right) by the size of the display area. If the cursor is on the
+second icon at the bottom (right) of the scroll bar, the information
+will scroll up (left) by the size of the display area. If the cursor
+is in the middle area of the scroll bar, the slider is positioned to
+indicate the position of the information to be displayed when the
+mouse button is released.
+::::SELECT_PRINTER
+			Select current printer
+			ออออออออออออออออออออออ
+ 
+The current printer is the device to which printed output is directed.
+The InfoBench system can be configured to have more than one such
+printer if there is more than one printer attached to your computer. A
+physical printer can also be configured in a number of different ways.
+ 
+The printer selection window shows the names of printers that have
+been configured as a list of radio buttons (see <RADIO_BUTTON>). The
+current printer is the one with "(*)" at the start of the name.
+ 
+You can change the radio button to another printer by making that
+field the current field and then pressing the space bar. If there is a
+mouse attached to your computer, you can accomplish the same by
+positioning the mouse cursor within the field and then pressing and
+releasing the leftmost mouse button.
+ 
+The current printer is changed (and the selection window is removed)
+when you press the Enter key. If you press the Esc (escape) key, the
+selection window is cancelled and the current printer will be
+unchanged.

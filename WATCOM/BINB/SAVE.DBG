@@ -1,0 +1,13 @@
+* Syntax:	save
+*
+* Synopsis:	Creates a SETUP.DBG file which contains the debugger commands
+*		required to recreate the current debugger configuration.
+*
+log setup.dbg
+print {* window settings}
+show display
+print {* window colours}
+show paint
+print {* debugger settings}
+show set
+log

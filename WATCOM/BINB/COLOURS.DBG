@@ -1,0 +1,9 @@
+* Syntax:	colours
+*
+* Synopsis:	Set the colours for the various debugger windows.
+*
+paint	*	 title	  bright blue, white
+paint	*	 gadget   bright blue, white
+paint	*	 plain	  black, white
+paint	*	 active   black, red
+paint	*	 standout black, cyan

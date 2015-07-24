@@ -1,0 +1,85 @@
+# example linker initialization file.
+system begin dos
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\dos
+    format dos ^
+end
+system begin dos4g
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\dos
+    format os2 flat
+end
+system begin pharlap
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\dos
+    format phar ^
+end
+system begin ergo
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\dos
+    format phar ^
+end
+system begin win386
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\win
+    format phar rex
+end
+system begin os2
+    libpath c:\os2
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\os2
+    format os2 ^
+end
+system begin windows
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\win
+    library windows
+    option stack=8k, heapsize=1k
+    format windows ^
+end
+system begin os2v2
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\os2
+    format os2 flat ^
+end
+system begin novell
+    format novell ^
+end
+system begin ads
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\dos
+    libfile adsstart  
+    format phar ^
+end
+system begin com
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\dos
+    libfile cstart_t
+    format dos com 
+end
+system begin codebuilder
+    libpath %watcom%\lib386    
+    libpath %watcom%\lib386\dos
+    format phar rex
+end    
+system begin qnx
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\qnx
+    format qnx
+end
+system begin go
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\go
+    format os2 flat ^
+end 
+# remember, don't put carets (^) in these!
+system begin 286
+    libpath %watcom%\lib286
+    libpath %watcom%\lib286\dos
+    format dos
+end
+system begin 386
+    libpath %watcom%\lib386
+    libpath %watcom%\lib386\dos
+    format os2 flat
+end

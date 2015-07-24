@@ -1,0 +1,25 @@
+ASM Assembler source
+BAT DOS Batch
+C   C Source file
+CMD OS/2 command file
+COM Program (.COM)
+DEF C Prototype file
+DBG VIDEO command file
+DLL Dynamic Link Library
+EPS Postscript file
+EXE Program (.EXE)
+EXP Protected-mode EXE
+FOR FORTRAN source
+H   Header file
+HLP Help file
+IBC Configuration
+LBC Librarian commands
+LIB Object library
+LNK Linker directives
+MIF Make include file
+NLM NetWare Load Module
+OBJ Object file
+PRF Profile file
+PRS VIDEO parse file
+PS  Postscript file
+TRP VIDEO trap file

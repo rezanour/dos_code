@@ -1,0 +1,13 @@
+* Syntax:       bcnt <count> <address>
+*
+* Synopsis:     Break execution after "count" iterations at the specified
+*               "address".  The break point is cleared afterwards.
+*
+* Example:      bcnt 1000 StageD
+*
+/_dbg@cnt$<0> = 0
+break <2> {
+    /_dbg@cnt$<0>=_dbg@cnt$<0>+1;
+    if _dbg@cnt$<0>!=<1> {go/keep} {break/clear/.}
+}
+? {The count variable is "_dbg@cnt$<0>"}
